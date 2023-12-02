@@ -1,0 +1,4502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kaye is Learning SQL-The Story of the European Union</title>
+
+
+    <meta name="description" content="KayeILSQL-The Story of the European Union">
+    <meta name="keywords" content="Kaye is Learning SQL, #kayeIsLearningSQL, 
+    The Story of the European Union, #TheStoryoftheEuropeanUnion, 
+    European Union,
+    #EuropeanUnion,
+    EuropeanParliament,
+    #European Parliament,
+    ">
+    <meta name="author" content="Dicle Ertan Ülger">
+
+
+    <style>
+        h1 {
+            color: rgb(8, 51, 143);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            page-break-before: always;
+        }
+
+        h2 {
+            color: rgb(125, 186, 0);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            page-break-before: always;
+        }
+
+        h3 {
+            color: rgb(0, 184, 224);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        h4 {
+            color: rgb(222, 59, 33);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        h5 {
+            color: rgb(0, 196, 181);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: large;
+        }
+
+        p {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        .note-bold {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+
+        .note-bold-larger {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        .note-bold-large-pad {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 30px;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        .note-10 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(222, 59, 33);
+            background-color: rgb(247, 181, 18);
+            padding: 30px;
+            font-weight: bold;
+        }
+
+        .note-20 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(222, 59, 33);
+            font-weight: bold;
+        }
+
+        .note-25 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(222, 59, 33);
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .note-30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(247, 181, 18);
+            padding: 30px;
+            font-weight: bold;
+        }
+
+        .note-40 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(0, 184, 224);
+            padding: 30px;
+            font-weight: bold;
+        }
+
+        .note-50 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 25%);
+            padding: 30px;
+            font-weight: bold;
+        }
+
+        .note-55 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 25%);
+            padding: 30px;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        .note-60 {
+            background-color: rgb(247, 181, 18);
+            color: rgb(8, 51, 143);
+            font-size: larger;
+            font-weight: bold;
+            padding: 30px;
+        }
+
+        .note-70 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 25%);
+            padding: 20px;
+        }
+
+        .note-75 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 25%);
+            color: rgb(222, 59, 33);
+            padding: 30px;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        .note-80 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(247, 181, 18);
+            color: rgb(222, 59, 33);
+            padding: 30px;
+            font-weight: bold;
+        }
+
+
+        .note-85 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(247, 181, 18);
+            color: rgb(222, 59, 33);
+            padding: 30px;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        .note-jci-green {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(125, 186, 0);
+            padding: 30px;
+        }
+
+
+        .note-jci-green-1 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: larger;
+            background-color: rgb(125, 186, 0);
+            padding: 30px;
+        }
+
+        .note-jci-green-2 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: larger;
+            font-weight: bold;
+            background-color: rgb(125, 186, 0);
+            padding: 30px;
+        }
+
+        .note-jci-green-3 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: larger;
+            font-weight: bold;
+            background-color: rgb(125, 186, 0);
+            padding: 30px;
+        }
+
+
+        .note-90 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(125, 186, 0, 25%);
+            padding: 30px;
+
+        }
+
+        .note-95 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 10%);
+            padding: 30px;
+        }
+
+        .note-95-a30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 30%);
+            padding: 30px;
+        }
+
+        .note-96 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 10%);
+            padding: 30px;
+            font-size: larger;
+        }
+
+        .note-97 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(125, 186, 0, 10%);
+            padding: 30px;
+
+        }
+
+        .note-97-a30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(125, 186, 0, 30%);
+            padding: 30px;
+        }
+
+        .note-98 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(125, 186, 0, 10%);
+            padding: 30px;
+            font-size: larger;
+
+        }
+
+        .note-jcigreen-larger {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(125, 186, 0);
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        .note-110 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(199, 15, 175);
+            font-weight: bold;
+        }
+
+        .note-115 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(199, 15, 175, 25%);
+            padding: 30px;
+            font-weight: bold;
+        }
+
+        .note-117 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(199, 15, 175, 10%);
+            padding: 30px;
+        }
+
+        .note-117-a30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(199, 15, 175, 30%);
+            padding: 30px;
+        }
+
+        .note-117-a50 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(199, 15, 175, 50%);
+            padding: 30px;
+        }
+
+        .note-117-a70 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(199, 15, 175, 70%);
+            padding: 30px;
+        }
+
+        .note-117-larger {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(199, 15, 175);
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        .note-200 {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .note-210 {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+
+
+
+        .note-300 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(102, 99, 102);
+            color: rgb(245, 245, 245);
+            padding: 30px;
+            font-weight: bold;
+        }
+
+
+        .note-charcoal-larger {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(102, 99, 102);
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        .note-charcoal {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(102, 99, 102);
+            padding: 30px;
+        }
+
+        .note-charcoal-a70 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(102, 99, 102, 70%);
+            padding: 30px;
+        }
+
+        .note-charcoal-a50 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(102, 99, 102, 50%);
+            padding: 30px;
+        }
+
+        .note-charcoal-a30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(102, 99, 102, 30%);
+            padding: 30px;
+        }
+
+        .note-solaryellow-a30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(247, 181, 18, 30%);
+            padding: 30px;
+        }
+
+        .note-brightgreen {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(196, 219, 13);
+            padding: 30px;
+        }
+
+        .note-brightgreen-a70 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(196, 219, 13, 70%);
+            padding: 30px;
+        }
+
+        .note-brightgreen-a50 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(196, 219, 13, 50%);
+            padding: 30px;
+        }
+
+        .note-brightgreen-a30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(196, 219, 13, 30%);
+            padding: 30px;
+        }
+
+        .note-oceangreen-a10 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 196, 181, 10%);
+            padding: 30px;
+        }
+
+        .note-oceangreen-a30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 196, 181, 30%);
+            padding: 30px;
+        }
+
+        .note-oceangreen-a50 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 196, 181, 50%);
+            padding: 30px;
+        }
+
+        .note-oceangreen-a70 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 196, 181, 70%);
+            padding: 30px;
+        }
+
+
+        .note-oceangreen-larger {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgba(0, 196, 181);
+            font-size: larger;
+            font-weight: bold;
+            padding: 30px;
+        }
+
+        .note-oceangreen-larger-bck {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 196, 181);
+            font-size: larger;
+            font-weight: bold;
+            padding: 30px;
+        }
+
+        .note-cyan-a30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 30%);
+            padding: 30px;
+        }
+
+
+        .note-radient-red {
+            background-color: rgb(168, 3, 79);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 30px;
+        }
+
+        .note-radient-red-a70 {
+            background-color: rgba(168, 3, 79, 70%);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 30px;
+        }
+
+        .note-radient-red-a50 {
+            background-color: rgba(168, 3, 79, 50%);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 30px;
+        }
+
+        .note-radient-red-a30 {
+            background-color: rgba(168, 3, 79, 30%);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 30px;
+        }
+
+        .note-radient-red-a10 {
+            background-color: rgba(168, 3, 79, 10%);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 30px;
+        }
+
+        ul {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            line-height: 30px;
+        }
+
+        ol {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            line-height: 30px;
+        }
+
+        #t20 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+        }
+
+        table {
+            width: 100%;
+            text-align: left;
+            font-size: small;
+        }
+
+        table,
+        th,
+        td {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+
+        div {
+            overflow-x: auto;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <h1>The Story of the European Union</h1>
+
+    <p></p>
+
+    <div class="note-jci-green-3">
+        <p>Please Note:</p>
+        <p>
+        <ul style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: larger;
+            font-weight: bold;
+            ">
+            <li> The European Parliament model and data used in this narrative
+                are based on the elections which were held in June 2004.</li>
+            <li>The European Parliament of 2004 elections had 785 members from all 27 EU countries.</li>
+        </ul>
+        </p>
+    </div>
+    <p></p>
+
+
+    <div class="note-95" style="page-break-before: always;">
+
+        <p style="font-size: larger; font-weight: bold;">Contents</p>
+
+        <p style="font-size: larger; font-weight: bold;">
+            <a href="#seu">The European Union</a>
+        </p>
+
+        <p style="font-size: larger; font-weight: bold;">
+            <a href="#sep">The European Parliament</a>
+        </p>
+
+        <p style="font-size: larger; font-weight: bold;">
+            <a href="#sconseu">The Council of the European Union</a>
+        </p>
+
+        <p style="font-size: larger; font-weight: bold;">
+            <a href="#scommeu">The European Commission</a>
+        </p>
+
+
+        <p style="font-size: larger; font-weight: bold;">
+            <a href="#sreferences"> References </a>
+        </p>
+    </div>
+    <p></p>
+
+    <h1 id="seu">The European Union</h1>
+
+    <p><a href="#seu_unique">The European Union is Unique</a></p>
+    <p><a href="#seu_unusual">Unusual way in which the European Union works</a></p>
+    <ul>
+        <li>
+            <p><a href="#seu_poolsovereignty">Pooling Sovereignty</a></p>
+        </li>
+    </ul>
+    <p><a href="#seu_main_inst">The Three Main Decision-Making Institutions</a></p>
+    <p><a href="#seu_treaties">The Treaties - Primary Legislation</a></p>
+    <p><a href="#seu_three_pillars">Merged Treaties - The Three Pillars of the EU</a></p>
+    <p><a href="#seu_how_decisions">How The EU Takes Decisions</a></p>
+    <ul>
+        <li>
+            <p><a href="#seu_law">EU Law - Secondary Legislation</a></p>
+        </li>
+        <li>
+            <p><a href="#seu_directives">Directives</a></p>
+        </li>
+        <li>
+            <p><a href="#seu_regulations">Regulations</a></p>
+        </li>
+    </ul>
+
+    <p><a href="#seu_law_procedures">EU Law-Making Procedures</a></p>
+    <ul>
+        <li>
+            <p><a href="#seu_codecision">Co-Decision</a></p>
+        </li>
+        <li>
+            <p><a href="#seu_consultation">Consultation</a></p>
+        </li>
+        <li>
+            <p><a href="#seu_assent">Assent</a></p>
+        </li>
+    </ul>
+
+    <p><a href="#"></a></p>
+    <p><a href="#"></a></p>
+    <p><a href="#"></a></p>
+    <p><a href="#"></a></p>
+
+    <h2 id="seu_unique">The European Union is Unique</h2>
+
+    <div class="note-95">
+        <p>The European Union is unique.
+            It is not a federal State like the United States of America,
+            nor is it a purely intergovernmental organisation like the
+            United Nations.
+            The European Union (EU) is a family of democratic European countries
+            working together
+            to improve life for their citizens and to build a better world.</p>
+
+    </div>
+    <p></p>
+
+    <div class="note-97">
+        <p>EU is a remarkable success story. In just over half a century,
+            it has delivered peace and prosperity in Europe,
+            a single European currency (the euro) and a frontier-free
+            'single-market'
+            where goods, people, services and capital move around freely.
+            It has become a major trading power, and a world leader in fields
+            such as environmental protection and development aid. </p>
+
+        <p>The European Union’s success owes a lot to the unusual way
+            in which it works.</p>
+
+    </div>
+    <p></p>
+    <h2 id="seu_unusual">Unusual way in which the European Union works</h2>
+
+    <div class="note-117">
+        <p>European Union works in an unusual way, because its
+            'member states' remain independent sovereign nations but
+            they pool their sovereignty in order
+            to gain a strength and world influence none of them
+            could have on their own.</p>
+
+    </div>
+    <p></p>
+    <h3 id="seu_poolsovereignty">
+        Pooling Sovereignty
+    </h3>
+
+
+    <div class="note-95">
+
+        <p></p>
+        <p> <span class="note-bold">Pooling Sovereignty</span>
+            means, in practice, that the member states
+            delegate some of their decision-making powers
+            to shared institutions they have created.</p>
+        <p>In this way, decisions on specific matters of joint interest
+            can be made democratically at European level.</p>
+    </div>
+   
+
+    <p style="page-break-before: always;">&nbsp; </p>
+    <p>   <img style="max-width: 100%; height: auto;" src="../images/eu/pool_sovereignty_01.jpg"
+            alt="Decisions delegated to Shared Institutions">
+    </p>
+
+
+    <p style="page-break-before: always;">&nbsp; </p>
+    <p>
+
+        <img style="max-width: 100%; height: auto;" src="../images/eu/pool_sovereignty_02.jpg" alt="Pooling Sovereignty">
+    </p>
+
+
+    <h2 id="seu_main_inst">The Three Main Decision-Making Institutions</h2>
+
+    <div class="note-95">
+        <p>The three main decision-making institutions are:</p>
+        <ol>
+            <li><span class="note-bold">European Parliament(EP)</span>,
+                which represents the <span class="note-bold">EU's Citizens</span>
+                and is directly elected by them.</li>
+            <li><span class="note-bold">Council of the European Union</span>,
+                which represents the
+                <span class="note-bold">Individual Member States</span>.
+            </li>
+            <li><span class="note-bold">European Commission</span>,
+                which represents the
+                <span class="note-bold">Interest of the Union</span>
+                as a whole.
+            </li>
+        </ol>
+    </div>
+
+
+    <p style="page-break-before: always;">&nbsp; </p>
+
+    <p>
+        <img style="max-width: 100%; height: auto;" src="../images/eu/institutional_triangle.jpg" alt="Institutional Triangle">
+    </p>
+
+
+
+
+    <div class="note-97">
+        <p></p>
+        <p></p>
+        <p>This
+            <span class="note-bold">Institutional Triangle</span>
+            produces the policies and laws that apply throughout the EU.
+        </p>
+
+        <p>The powers and responsibilities of the EU institutions,
+            and the rules and procedures they must follow, are laid down in
+            <span class="note-bold">The Treaties</span> on which the EU is founded.
+        </p>
+
+
+        <p>The Treaties are agreed by
+            <span class="note-bold">the Presidents and Prime Ministers</span>
+            of all the
+            <span class="note-bold">EU Countries</span>
+            and then ratified by their
+            <span class="note-bold">Parliaments</span>.
+        </p>
+
+    </div>
+    <p></p>
+
+    <h2 id="seu_treaties">The Treaties - Primary Legislation</h2>
+
+    <span class="note-bold"> </span>
+    <span class="note-bold"> </span>
+
+    <div class="note-95">
+        <p>The EU is founded on four Treaties:</p>
+
+        <ol>
+            <li>The Treaty establishing the
+                <span class="note-bold">European Coal and Steel Community (ECSC)</span>,
+                which was signed on 18 April 1951 in Paris,
+                came into force on 23 July 1952 and expired on 23 July 2002.
+            </li>
+            <li>The Treaty establishing the
+                <span class="note-bold">European Economic Community (EEC)</span>,
+                which was signed on 25 March 1957 in Rome and came into force on 1 January 1958.
+                It is often referred to as
+                <span class="note-bold">the Treaty of Rome</span>.
+            </li>
+            <li>The Treaty establishing the
+                <span class="note-bold">European Atomic Energy Community (Euratom)</span>,
+                which was signed in Rome along with the EEC Treaty.
+            </li>
+            <li>
+                The Treaty on <span class="note-bold">European Union (EU)</span>,
+                which was signed in Maastricht on 7 February 1992, and came into force on 1 November 1993.
+                It is often referred to as
+                <span class="note-bold">the Maastricht Treaty</span>.
+            </li>
+        </ol>
+
+
+
+    </div>
+    <p></p>
+
+
+
+    <div class="note-97">
+        <p></p>
+        <p>These Treaties have merged and evolved in time creating
+            <span class="note-bold">The Three Pillars of The EU</span>.
+            <span class="note-bold"> </span>
+        </p>
+
+    </div>
+    <p></p>
+
+    <h2 id="seu_three_pillars">Merged Treaties - The Three Pillars of the EU</h2>
+
+    <span class="note-bold"> </span>
+    <span class="note-bold"> </span>
+
+    <div class="note-95">
+        <p> <span class="note-bold">The Treaties</span>
+            which are also known as
+            <span class="note-bold">The Primary Legislation </span>
+            have merged and evolved in time creating the
+            <span class="note-bold">Three Pillars of the EU</span>:
+        </p>
+
+        <ol>
+            <li>
+                <span class="note-bold">Community Domain</span>,
+                which is the most common policy areas.
+            </li>
+            <li><span class="note-bold">Common Foreign and Security Policy</span></li>
+            <li><span class="note-bold">Police and Judicial Cooperation in
+                    Criminal Matters</span></li>
+        </ol>
+        <p>This evolution is described below.</p>
+
+    </div>
+    <p></p>
+
+    <div class="note-97">
+        <p>
+            <span class="note-bold">The European Coal and Steel Community(ECSC)</span>,
+            <span class="note-bold">the European Economic Community(EEC)</span>
+            and the <span class="note-bold">European Atomic Energy Community(Euratom)</span>
+            Treaties created the three
+            <span class="note-bold">European Communities</span>, which is
+            the system of joint decision-making on coal, steel, nuclear power
+            and other major sectors of the member states' economies.
+        </p>
+
+        <p>
+            <span class="note-bold">The common institutions set up to manage this system</span>
+            were merged in 1967,
+            resulting in a <span class="note-bold">single Commission</span> and
+            a <span class="note-bold">single Council of Ministers</span>.
+        </p>
+
+        <p>
+            <span class="note-bold">The EEC</span>,
+            in addition to its economic role, gradually took on a wide range of
+            responsibilities,
+            including social, environmental and regional policies.
+            Since it was no longer a purely economic community,
+            <span class="note-bold">the Fourth Treaty(Maastricht)</span>
+            renamed it simply
+            <span class="note-bold">the European Community (EC)</span>.
+            As the
+            <span class="note-bold">ECSC Treaty</span>
+            approached expiry in 2002, responsibilities for coal and steel
+            were progressively merged into other Treaties.
+        </p>
+
+        <p>At Maastricht, the member state governments also agreed
+            to work together on
+            <span class="note-bold">Foreign and Security Policy</span>
+            and in the area of
+            <span class="note-bold">Justice and Home Affairs</span>.
+            By adding this intergovernmental cooperation
+            to the existing Community system,
+            <span class="note-bold">the Maastricht Treaty</span>
+            created a new structure with
+            <span class="note-bold">Three Pillars</span>
+            which is <span class="note-bold">Political</span> as well as
+            <span class="note-bold">Economic</span>.
+        </p>
+        <p>
+            <img style="max-width: 100%; height: auto;" src="../images/eu/three_pillars.jpg" alt="The Three Pillars of the EU">
+        </p>
+
+        <p>These Three Pillars represent the different political and
+            economic policy areas, with different decision-making
+            systems;
+        </p>
+        <p>... and this is
+            <span class="note-bold">the European Union</span>.
+        </p>
+        <span class="note-bold"> </span>
+        <p>
+            <img style="max-width: 100%; height: auto;" src="../images/eu/three_pillars_03.jpg"
+                alt="The Three Pillars Make Up the EU">
+        </p>
+
+    </div>
+    <p></p>
+    <span class="note-bold"> </span>
+    <span class="note-bold"> </span>
+    <div class="note-117">
+        <p>The Treaties are the basis for everything the EU does.
+            They have been amended each time new member states have joined. </p>
+        <p>From time to time the Treaties have also been amended to reform
+            the European Union Institutions and to give them
+            new areas of responsibility. </p>
+        <p>This is always done by a Special Conference of the
+            <span class="note-bold">EU's National Governments</span>
+            which is called an
+            <span class="note-bold">Inter-Governmental Conference or IGC</span>.
+        </p>
+
+        <p>Key Inter-Governmental Conferences resulted in the following legislation.</p>
+
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+    </div>
+    <p></p>
+
+    <div class="note-117">
+        <p></p>
+        <p> <span class="note-bold">The Single European Act (SEA)</span> </p>
+        <p>The Single European Act, which was signed in February 1986 and came
+            into force on 1 July 1987.
+            It amended the EEC Treaty and paved the way for the single market.
+        </p>
+
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+    </div>
+    <p></p>
+
+    <div class="note-117">
+        <p><span class="note-bold">The Treaty of Amsterdam</span></p>
+
+        <p>The Treaty of Amsterdam, which was signed on 2 October 1997 and
+            came into force on 1 May 1999.
+            It extended the pooled sovereignty to more areas involving
+            more citizens' rights,
+            and closer interaction on social and employment policies.</p>
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+    </div>
+    <p></p>
+
+    <div class="note-117">
+        <p> <span class="note-bold">The Treaty of Nice</span></p>
+        <p>The Treaty of Nice, which was signed on 26 February 2001
+            and came into force on 1 February 2003.
+            It further amended the other Treaties, streamlining the
+            EU's decision-making system so
+            it could continue to work effectively even after
+            further enlargements.</p>
+
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+    </div>
+    <p></p>
+
+    <div class="note-117">
+        <p> <span class="note-bold">The Draft Constitutional Treaty</span></p>
+        <p>The draft Constitutional Treaty, which was agreed and signed in
+            October 2004,
+            but has not come into force because it was not ratified
+            by all EU countries.</p>
+
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+    </div>
+    <p></p>
+
+    <div class="note-117">
+        <p><span class="note-bold">The Reform Treaty</span></p>
+        <p>The Reform Treaty, which was agreed in principle in 2007,
+            but will not come into force until it has been ratified
+            by all member states.</p>
+
+
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+    </div>
+    <p></p>
+
+    <h2 id="seu_how_decisions">How The EU Takes Decisions</h2>
+    <div class="note-95">
+        <p>The Treaties which are known as
+            <span class="note-bold">Primary Legislation</span>,
+            are the basis for a large body of
+            <span class="note-bold">Secondary Legislation</span>.
+        </p>
+
+        <p>The <span class="note-bold">Secondary Legislation</span>
+            consists mainly of regulations, directives and recommendations adopted by
+            the EU institutions.</p>
+
+        <p>These laws, along with EU policies in general,
+            are the results of decisions taken by the
+            <span class="note-bold">Institutional Triangle</span>
+            mentioned above.
+        </p>
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+    </div>
+    <p></p>
+
+    <h3 id="seu_law">EU Law - Secondary Legislation</h2>
+        <div class="note-95">
+            <p></p>
+            <p>
+            <ul>
+                <li>In general, it is the
+                    <span class="note-bold">European Commission</span>
+                    that proposes new legislation.
+                </li>
+                <li>But,
+                    it is the
+                    <span class="note-bold">European Council</span>
+                    and the
+                    <span class="note-bold">European Parliament</span>
+                    that pass the laws.
+                </li>
+                <li>In some cases, the
+                    <span class="note-bold">European Council</span>
+                    acts alone.
+                </li>
+                <li>In some cases,
+                    <span class="note-bold">other Institutions of the EU</span>
+                    have roles to play.
+                </li>
+            </ul>
+            </p>
+
+            <p>
+            <figure>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/second_leg_01.jpg" alt="How the EU Takes Decisions">
+                <figcaption>
+                </figcaption>
+            </figure>
+            </p>
+
+            <p>These laws have a direct impact on the lives of EU citizens.</p>
+            <p> <span class="note-bold">The main forms of EU law are;</span>
+            </p>
+            <ul>
+                <li>Directives</li>
+                <li>Regulations</li>
+            </ul>
+
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <h3 id="seu_directives">Directives</h3>
+        <div class="note-95">
+            <p></p>
+            <ul>
+                <li>Directives establish a common aim for all
+                    Member States, but
+                </li>
+                <li>Leave it to National Authorities to decide on the form
+                    and method of achieving it
+                </li>
+                <li>Member States are given one to two years to implement a
+                    Directive
+                </li>
+            </ul>
+
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <h3 id="seu_regulations">Regulations</h3>
+        <div class="note-95">
+            <p></p>
+            <p>Regulations are directly applicable throughout the EU
+                as soon as they come into force without
+                further action by the Member States.
+            </p>
+            <p></p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <h2 id="seu_law_procedures">EU Law-Making Procedures</h2>
+        <div class="note-95">
+            <p></p>
+            <p>The rules and procedures for
+                <span class="note-bold">EU decision-Making</span>
+                are laid down in
+                <span class="note-bold">the Treaties</span>.
+            </p>
+            <p>
+                Every proposal for a
+                <span class="note-bold">New European Law</span>
+                must be based on
+                <span class="note-bold">a specific Treaty article</span>,
+                which is referred to as the
+                <span class="note-bold">legal basis</span>
+                of the proposal.
+            </p>
+            <p>
+                This determines
+                <span class="note-bold">which legislative procedure</span>
+                must be
+                followed;
+            </p>
+            <ul class="note-bold">
+                <li>Co-Decision</li>
+                <li>Consultaion</li>
+                <li>Assent</li>
+
+            </ul>
+
+
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+
+
+
+        <div class="note-97">
+            <p></p>
+            <p>The Treaties are the basis for everything the EU does. </p>
+            <p>The Treaties have been amended each time New Member States
+                have joined. </p>
+            <p>From time to time the Treaties have also been amended to
+                reform the European Union's Institutions
+                and to give it New Areas of Responsibility.</p>
+
+
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+
+        </div>
+        <p></p>
+
+        <h3 id="seu_codecision">Co-Decision</h3>
+
+        <div class="note-95">
+            <p></p>
+            <p><span class="note-bold">Co-Decision</span>
+                is the procedure used for most EU law-making.
+            </p>
+            <p>
+                In the Co-Decision procedure, Parliament shares legislative power
+                with the Council.
+            </p>
+            <p>
+                If Council and Parliament cannot agree on a piece of proposed legislation,
+                there will be no new law.
+            </p>
+
+            <p> <img style="max-width: 100%; height: auto;" src="../images/eu/codecision_01.jpg" alt="Co-Decision Procedure">
+            </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p></p>
+            <ul>
+                <li>The Co-Decision Procedure provides for
+                    two successive 'readings' in each Institution -
+                    the Parliament and the Council.</li>
+                <li>If an agreement is reached in these readings, the law can be passed. </li>
+                <li>If not, it will be put before a Conciliation Committee. </li>
+                <li>This Conciliation Committee is composed of
+                    equal numbers of the Parliament and
+                    the Council representatives. </li>
+                <li>Once this Committee has reached an agreement,
+                    the agreed text is sent again to the Parliament and the Council
+                    - so that they can finally adopt it as law.</li>
+            </ul>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+            <p>
+            <p> <img style="max-width: 100%; height: auto;" src="../images/eu/codecision_02.jpg" alt="Co-Decision Procedure">
+            </p>
+            </p>
+        </div>
+        <p></p>
+
+        <div class="note-117">
+            <p></p>
+            <p class="note-bold-larger">Most laws passed in Co-Decision are,
+                in fact, adopted either at the first
+                or the second reading as a result of good cooperation between
+                the Institutions.
+            </p>
+
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <h3 id="seu_consultation">Consultation</h3>
+
+        <div class="note-95">
+            <p></p>
+            <p>The Consultation Procedure is used in areas such as
+                agriculture, taxation and competition. </p>
+            <p>Here are the steps of the Consultation Procedure:</p>
+            <ol>
+                <li>The Commission proposes a legislation to the Council.
+                </li>
+                <li>
+                    <p>Based on a proposal from the Commission, the Council consults;</p>
+                    <ul>
+                        <li>the Parliament</li>
+                        <li>the European Economic and Social Committee</li>
+                        <li>the Committee of the Regions</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <p> Under the Consultation procedure, the Parliament may:
+                    </p>
+
+                    <ol>
+                        <li>Approve the Commission's Proposal</li>
+                        <li>Reject It</li>
+                        <li>Ask for Amendments</li>
+                    </ol>
+                </li>
+
+                <li>
+                    <p>If the Parliament asks for amendments,
+                        the Commission will consider all the changes the Parliament suggests.
+                        If it accepts any of these suggestions
+                        It will send the Council an amended proposal.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        The decision ultimately rests with the Council;
+                        the Council either adopts the amended proposal or amends it further.
+                    </p>
+
+                    <p>In this procedure, as in all others,
+                        if the Council amends a Commission proposal, it must do so unanimously.
+                    </p>
+
+                </li>
+            </ol>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p></p>
+            <p>
+            <figure>
+                <figcaption class="note-bold-larger">The Consultation Procedure </figcaption>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/consult_01.jpg" alt="Consultation Procedure">
+                <img style="max-width: 100%; height: auto;" src="../images/eu/consult_02.jpg" alt="Consultation Procedure">
+            </figure>
+            </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+
+
+        <h3 id="seu_assent">Assent</h3>
+        <div class="note-117">
+            <p></p>
+            <p> The <span class="note-bold">Assent Procedure</span>
+                means that
+                <span class="note-bold">the Council</span> has to obtain
+                <span class="note-bold">the European Parliament's assent</span>
+                before certain very important decisions are taken.
+            </p>
+            <p><span class="note-bold">To Assent:</span>
+                to give approval to.</p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-95">
+            <p>
+            <figure>
+                <figcaption></figcaption>
+                <img style="max-width: 100%; min-height: auto;" src="../images/eu/assent_01.jpg" alt="Assent Procedure">
+            </figure>
+            </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p></p>
+            <p>
+            <figure>
+                <figcaption></figcaption>
+                <img style="max-width: 100%; min-height: auto;" src="../images/eu/assent_02.jpg" alt="Assent Procedure">
+            </figure>
+            </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+
+
+        <h1 id="sep">The European Parliament</h1>
+
+
+        <p></p>
+        <div class="note-jci-green-3">
+            <p>Please Note:</p>
+            <p>
+            <ul style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: larger;
+                font-weight: bold;
+                ">
+                <li> The European Parliament model and data used in this narrative
+                    are based on the elections which were held in June 2004.</li>
+                <li>The European Parliament of 2004 elections had 785 members from all 27 EU countries.</li>
+            </ul>
+            </p>
+        </div>
+        <p></p>
+
+
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+    font-weight: bold;
+    font-size: larger;
+    " href="#sep_ep"> The European Parliament</a>
+        </p>
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+    font-weight: bold;
+    font-size: larger;
+    " href="#sep_president"> The President of the European Parliament</a>
+        </p>
+        <p>
+        <ul>
+            <li>
+                <a href="#sep_pres_history"> Presidents of the EP from 1958 to 2009</a>
+            </li>
+            <li> <a href="#sep_simone_veil">Reflections of Simone Veil </a> </li>
+            <li> <a href="#ep_hans_gert_pöttering"> By Hans-Gert Pöttering</a> </li>
+        </ul>
+        </p>
+        <p>
+            <a style="color: rgb(222, 59, 33);
+    font-weight: bold; font-size: larger;" href="#sep_parl_work">
+                What does the Parliament do?</a>
+        </p>
+
+        <p>
+        <ul>
+            <li>
+                <a href="#sep_role_1">Role 1: Passing European Laws</a>
+            </li>
+            <li><a href="#sep_role_2">
+                    Role 2: Democratic Supervision over the other EU Institutions
+                </a></li>
+            <li><a href="#sep_role_3">Role 3: Power of the Purse</a></li>
+        </ul>
+        </p>
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+    font-weight: bold; font-size: larger;" href="#sep_work_org">
+                How is the Parliament’s work organised? </a>
+        </p>
+        <p>
+        <ul>
+            <li><a href="#sep_prep_plenary">Stage 1: Preparing for the Plenary Session </a> </li>
+            <li><a href="#sep_plenary">Stage 2: The Plenary Session </a> </li>
+        </ul>
+        </p>
+
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+    font-weight: bold; font-size: larger;" href="#sep_meps_pgs">
+                The MEPS and the Political Groups </a>
+        </p>
+
+        <p>
+
+        <ul>
+            <li>
+                <a href="#sep_list_pg">List of Political Groups </a>
+            </li>
+            <li> <a href="#sep_seat_distribution">
+                    Distribution of Seats as of August 2008
+                </a></li>
+        </ul>
+        </p>
+
+
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+    font-weight: bold; font-size: larger;" href="#sep_political_bodies">
+                Political Bodies </a>
+        </p>
+        <p>
+        <ul>
+            <li>
+                <a href="#sep_conference_pres">The Conference of the Presidents </a>
+            </li>
+            <li>
+                <a href="#sep_buraeu">Bureau </a>
+            </li>
+            <li>
+                <a href="#sep_quaestors">Quaestors </a>
+            </li>
+            <li>
+                <a href="#sep_committees">Parliamentary Committees </a>
+            </li>
+            <li>
+                <a href="#sep_delegations">Delegations</a>
+            </li>
+            <li>
+                <a href="#sep_secretariat">The Secretariat </a>
+            </li>
+        </ul>
+        </p>
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+    font-weight: bold; font-size: larger;" href="#sep_places_of_work">
+                Where is the Parliament based? </a>
+        </p>
+
+
+
+
+        <h2 id="sep_ep">The European Parliament</h2>
+
+        <div class="note-95">
+            <p>The European Parliament is the parliamentary institution of the European Union.
+                The European Parliament (EP) is elected by the citizens of the European Union
+                to represent their interests.
+                Its origins go back to the 1950s and the founding Treaties.
+                Since 1979 its members have been directly elected by the citizens of the EU.</p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p>Elections are held every five years, and every EU citizen is entitled to vote,
+                and to stand as a candidate, wherever they live in the EU.
+                Parliament thus expresses the democratic will of the Union’s nearly
+                500 million citizens and
+                it represents their interests in discussions with the other EU institutions.</p>
+
+
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-117">
+            <p></p>
+            <p>The latest elections were in June 2004.
+                Parliament has 785 members from all 27 EU countries.
+
+            </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+        <h2 id="sep_president">The President of the European Parliament</h2>
+
+        <div class="note-95">
+            <p>Information in this section, are taken from the booklet called 'The faces of the European Parliament',
+                which is produced by the European Parliament's Directorate-General for Communication (ISBN 928232316-1)
+                and also from the European Parliament's website:
+                www.europarl.europa.eu. </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p>The President of the European Parliament is elected for a renewable term of two and a half years,
+                i.e. half the lifetime of a Parliamentary term. The President represents the European Parliament,
+                vis-a-vis the outside world and in its relations with the other Community institutions.
+                The President chairs the plenary sittings of Parliament,
+                the Bureau of Parliament (including 14 Vice-Presidents)
+                and the Conference of Presidents of political groups.</p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <h3 id="sep_pres_history">Presidents of the EP from 1958 to 2009</h3>
+
+        <table>
+            <caption style="font-weight: bold;">
+                Presidents of the European Parliament from 1958 to 2009
+            </caption>
+
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>President</th>
+            </tr>
+
+
+            <tr>
+                <td>1958</td>
+                <td>1960</td>
+                <td>Robert Schuman</td>
+            </tr>
+            <tr>
+                <td>1960</td>
+                <td>1962</td>
+                <td>Hans Furler</td>
+            </tr>
+            <tr>
+                <td>1962</td>
+                <td>1964</td>
+                <td>Gaetano Martino</td>
+            </tr>
+            <tr>
+                <td>1964</td>
+                <td>1965</td>
+                <td>Jean Duvieusart</td>
+            </tr>
+            <tr>
+                <td>1965</td>
+                <td>1966</td>
+                <td>Victor Leemans</td>
+            </tr>
+            <tr>
+                <td>1966</td>
+                <td>1969</td>
+                <td>Alain Poher</td>
+            </tr>
+
+
+            <tr>
+                <td>1969</td>
+                <td>1971</td>
+                <td>Mario Scelba</td>
+            </tr>
+            <tr>
+                <td>1971</td>
+                <td>1973</td>
+                <td>Walter Behrendt</td>
+            </tr>
+            <tr>
+                <td>1973</td>
+                <td>1975</td>
+                <td>Cornelis Berkhouwer</td>
+            </tr>
+            <tr>
+                <td>1975</td>
+                <td>1977</td>
+                <td>Georges Spenale</td>
+            </tr>
+            <tr>
+                <td>1977</td>
+                <td>1979</td>
+                <td>Emilio Colombo</td>
+            </tr>
+            <tr style="font-weight: bold; color: rgb(222, 59, 33);">
+                <td>1979</td>
+                <td>1982</td>
+                <td>Simone Veil</td>
+            </tr>
+            <tr>
+                <td>1982</td>
+                <td>1984</td>
+                <td>Pieter Dankert</td>
+            </tr>
+            <tr>
+                <td>1984</td>
+                <td>1987</td>
+                <td>Pierre Pflimlin</td>
+            </tr>
+            <tr>
+                <td>1987</td>
+                <td>1989</td>
+                <td>Lord Plumb</td>
+            </tr>
+            <tr>
+                <td>1989</td>
+                <td>1992</td>
+                <td>Enrique Baron Crespo</td>
+            </tr>
+            <tr>
+                <td>1992</td>
+                <td>1994</td>
+                <td>Egon Klepsch</td>
+            </tr>
+            <tr>
+                <td>1994</td>
+                <td>1997</td>
+                <td>Klaus Hansch</td>
+            </tr>
+            <tr>
+                <td>1997</td>
+                <td>1999</td>
+                <td>Jose Maria Gil-Robles</td>
+            </tr>
+            <tr>
+                <td>1999</td>
+                <td>2002</td>
+                <td>Nicole Fontaine</td>
+            </tr>
+            <tr>
+                <td>2002</td>
+                <td>2004</td>
+                <td>Pat Cox</td>
+            </tr>
+            <tr>
+                <td>2004</td>
+                <td>2007</td>
+                <td>Josep Borrel Fontelles</td>
+            </tr>
+            <tr>
+                <td>2007</td>
+                <td></td>
+                <td>Hans-Gert Pöttering</td>
+            </tr>
+
+
+
+
+
+        </table>
+
+
+
+
+
+
+        <h3 id="sep_simone_veil">Reflections of Simone Veil</h3>
+
+        <p style="color: rgb(222, 59, 33);
+        font-weight: bold;
+        ">
+            Reflections of Simone Veil -- the first president to be
+            elected directly,
+            in other words by universal suffrage.</p>
+        <div class="note-95">
+            <p style="font-style: italic;">
+                "In the spring of 1979, I was Minister for Health and
+                Social Security when, a few months before the first elections
+                to the European Parliament by universal suffrage,
+                President Giscard d'Estaing asked me if I would be
+                willing to head
+                a list of candidates for this election.</p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+
+            <p style="font-style: italic;">
+                I accepted this honour without hesitation,
+                having been a military supporter of European integration
+                since the end of the war, regarding it as the only way to set
+                the seal on reconciliation between France and Germany and
+                avoid a recurrence of the tragedies of the past.
+            </p>
+
+            <p style="font-style: italic;">
+                After the excellent result achieved by my list,
+                President Giscard d'Estaing who was sensitive to
+                symbols of reconciliation and hence aware of
+                a former deportee, suggested to the other governments
+                that I should be made President of the new Parliament,
+                something that I had never imagined happening.
+                That is how, on 13 July 1979,
+                by an absolute majority in the second round,
+                I came to be elected President of the new assembly.
+            </p>
+
+            <p style="font-style: italic;">
+                The task that now faced me was not without its problems.
+                First of all, the nature of the new Member's mandate
+                had changed now that they were elected by universal suffrage,
+                as opposed to the former situation in which members of
+                the Assembly were representatives of the national parliaments.
+                The democratic underpinning had now become more direct.
+                In addition, Parliament's rules of procedure turned out
+                to be inappropriate for its new role,
+                not least in budgetary terms.
+            </p>
+
+            <p style="font-style: italic;">
+                To this was added a geographical issue.
+                Up to then the European Assembly had usually met in Luxembourg,
+                where most of its officials also lived. In Strasbourg, the Parliament had neither its own chamber nor
+                any offices, and therefore had to squat for one week each month in the premises of the Council of
+                Europe, bringing all the necessary documents with it from Luxembourg. One can imagine that this
+                peripatetic existence was not to the liking of some of the parlamentarians, so that I had to contain a
+                certain level of disgruntlement. It took months for this modus operandi to become second nature. We
+                still had to continue to hold a few sessions in Luxembourg. It was there that I remember with emotion
+                welcoming the Egyptian
+                President Anwar El Sadat not long before he was assasinated.
+            </p>
+
+
+            <p style="font-style: italic;">
+                The Members of the European Parliament, as one can imagine,
+                wanted to assert their new authority in budgetary matters.
+                The budget that had been drawn up for 1980 turned out to have
+                slightly exceeded the ceiling allocated by
+                the treaties to the European Parliament.
+                As the point in issue was combating world hunger,
+                I unhesitantly declared this budget to have been duly adopted. The French Government immediately brought
+                an action before the Court of Justice. It took some time for agreement to be reached between the
+                Parliament, the Council and the national governments,
+                particularly the one in Paris.
+            </p>
+
+
+            <p style="font-style: italic;">
+            <figure>
+                <figcaption style="font-weight: bold;">
+                    Simone Veil &#151; the first president to be elected by universal suffrage.
+                </figcaption>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/simone_veil.jpg" alt="Simone Veil">
+            </figure>
+            </p>
+
+
+
+            <p style="font-style: italic;">
+                I remember the real interest that the new European Parliament
+                aroused outside the Community in those now distant days.
+                This interest and curiosity was all the greater because
+                the Presidency of the Parliament was given to a woman,
+                which at that time was still looked upon with some
+                disapproval.
+                I was able to observe this when I went to Lomé for
+                the signing of the treaties with the African,
+                Pacific and Caribbean countries.
+            </p>
+
+
+            <p style="font-style: italic;">
+                I remember that both inside and outside the Community
+                I always received a warm welcome,
+                including in the United States, Canada, China and Japan.
+                Whenever possible I involved the Commission permanent
+                representatives in these visits.
+
+                <span class="note-bold">
+                    Throughout a presidency that lasted two and a half years,
+                    I never had any difficulty in always being seen by myself
+                    and others as standing above party divisions
+                    and representing the whole of Parliament. </span>
+                <span class="note-bold"> </span>
+
+            </p>
+
+
+
+            <p style="font-style: italic;">
+
+                In short, this sometimes difficult, always fascinating presidency
+                has remained the most rewarding period of my life.
+                I look back on it with nostalgia, as I do on the subsequent years
+                I spent at the European Parliament before returning to the French
+                government in 1993."
+                <span class="note-bold"> Simone Veil </span>
+            </p>
+
+
+            <p style="font-style: italic;
+            font-weight: bold;
+            color: rgb(8, 51, 143);
+            ">
+                Excerpt from 'Reflections of former Presidents of the European Parliament,
+                EU Publications Office, ISBN 978-92-823-2450-9'.
+            </p>
+
+        </div>
+        <p></p>
+        <h3 id="ep_hans_gert_pöttering">By Hans-Gert Pöttering</h3>
+        <p>Hans-Gert Pöttering was elected President of the EP in 2007 and
+            is to hold that post until the 2009 elections. </p>
+
+        <div class="note-97">
+            <p style="font-style: italic;">
+                The European Parliament speaks on behalf of nearly 500 million
+                European citizens from the
+                27 Member States of the European Union.
+                <br> ...
+                <br> ...
+            </p>
+
+            <p style="font-style: italic;">
+                The European Union represents a unique model of life and society.
+                It is based on equal rights and solidarity.
+                Its foundation is our common values, particularly respect for human dignity,
+                freedom, democracy and compliance with the law.
+                The European Parliament defends these rights beyond the borders of
+                the European union, all over the world.
+                In many countries, even outside the European Union, the voice of
+                the European Parliament has considerable moral authority.
+            </p>
+
+            <p style="font-style: italic;">
+                The Berlin declaration, adopted on the 50th anniversary of
+                the signature of the Treaties of Rome, states:
+            </p>
+
+            <p style="font-style: italic;
+            color: rgb(8, 51, 143);">
+                'We are, for our greater happiness, united'.
+            </p>
+
+            <p style="font-style: italic;">
+                We are leaving behind us a past in which European history
+                was blighted by war, and looking to the future,
+                for which we in the European Union now have a shared responsibility and
+                in which we shall realise our ideals and values.
+            </p>
+
+            <p style="font-style: italic;">
+                Only together can we overcome the challenges of the future,
+                for example find ways of defending our ideal of society,
+                ensuring growth and employment, protecting the climate and the environment,
+                and combating terrorism and organised crime.
+            </p>
+
+            <p style="font-style: italic;">
+                ...
+            </p>
+
+
+            <p style="font-style: italic;
+            font-weight: bold;">
+                Hans-Gert Pöttering <br>
+                President of the European Parliament 2007&#151;2009
+
+            </p>
+            <p style="font-style: italic;">
+
+            </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <h2 id="sep_parl_work">What does the Parliament do?</h2>
+
+        <p>
+        <figure>
+            <figcaption style="font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+">
+                Parliament has three main roles:
+            </figcaption>
+
+            <img style="max-width: 100%; height: auto;" src="../images/eu/ep_three_main_roles.jpg"
+                alt="Parliament's Three Main Roles">
+        </figure>
+        </p>
+
+        <h3 id="sep_role_1">Role 1: Passing European Laws </h3>
+        <div class="note-95">
+            <p>Parliament passes European laws jointly with the Council in many policy areas.
+                The fact that the EP is directly elected by the citizens of the EU helps
+                guarantee
+                the democratic legitimacy of the European law.</p>
+            <p>We have already seen the procedures used for passing new EU laws
+                under the heading
+                <span class="note-bold">"How EU takes Decisions"</span>.
+            </p>
+            <p>The most common procedure for adopting, i.e
+                passing EU legislation is
+                <span class="note-bold">codecision</span>.
+
+            </p>
+            <p> <span class="note-bold">Codecision Procedure </span>
+                places the European Parliament and the Council on an equal footing.
+                <span class="note-bold">Codecision Procedure </span>
+                applies to laws in a wide range of fields.
+            </p>
+        </div>
+        <p></p>
+
+        <div class="note-95">
+            <p></p>
+            <p>
+                In some fields such as agriculture, economic policy, visas and
+                immigration, the Council alone legislates,
+                but it has to <span class="note-bold">consult </span>
+                Parliament –
+                <span class="note-bold">the Consultation Procedure</span>
+                to pass new EU laws.
+            </p>
+
+            <p></p>
+            <p></p>
+
+            <p></p>
+            <p></p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+
+        </div>
+        <p></p>
+
+        <div class="note-95">
+            <p></p>
+            <p>Also for certain important decisions such as allowing new countries
+                to the EU, the Parliament's
+                <span class="note-bold">assent</span>
+                is required – <span class="note-bold">
+                    the Assent Procedure</span>.
+            </p>
+
+            <p></p>
+            <p></p>
+
+            <p></p>
+            <p></p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+
+        </div>
+        <p></p>
+
+        <div class="note-95">
+            <p></p>
+            <p>Parliament also provides impetus for new legislation by examining the
+                Commission's annual work programme, considering what new laws would
+                be appropriate
+                and asking the Commission to put forward proposals.</p>
+
+            <p></p>
+            <p></p>
+
+            <p></p>
+            <p></p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+
+        </div>
+        <p></p>
+
+        <h3 id="sep_role_2">Role 2: Democratic Supervision over the other EU Institutions </h3>
+
+
+        <div class="note-97">
+
+            <p>Parliament exercises democratic supervision over the other EU Institutions
+                in several ways.</p>
+            <p></p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+
+
+
+            <p>
+            <ul>
+                <li><a href="#sep_role_2_1">Supervision over the Commission </a> </li>
+                <li><a href="#sep_role_2_2">Supervision over the Council </a> </li>
+                <li><a href="#sep_role_2_3">Petitions from Citizens </a> </li>
+                <li><a href="#sep_role_2_4">Input to EU Summit </a> </li>
+
+            </ul>
+            </p>
+
+            <h4 id="sep_role_2_1">Supervision over the Commission </h4>
+
+            <ul>
+                <li>When a new Commission takes office,
+                    its members are nominated by the governments of the
+                    EU countries, but they cannot be appointed without
+                    Parliament’s approval.
+                </li>
+                <li>Parliament interviews each of them individually,
+                    including the prospective Commission President,
+                    and then votes on whether to approve the Commission as a whole.
+                </li>
+                <li>Throughout its term of office,
+                    the Commission remains politically accountable to Parliament,
+                    which can pass a 'motion of censure'
+                    requiring the Commission’s mass resignation.
+                </li>
+                <li>More generally, Parliament exercises control by
+                    regularly examining reports sent to it by the Commission
+                    – the annual general report, reports of the implementation
+                    of the budget, etc.
+                </li>
+                <li>Moreover, MEPs regularly ask the Commission questions which
+                    the commissioners are legally required to answer.
+                </li>
+            </ul>
+
+            <h4 id="sep_role_2_2">Supervision over the Council </h4>
+
+            <p>Parliament also monitors the work of the Council.
+                MEPs regularly ask the Council questions,
+                and the President of the Council attends the EPs plenary sessions
+                and takes part in important debates.</p>
+            <p></p>
+
+            <h4 id="sep_role_2_3">Petitions from Citizens </h4>
+            <p>Parliament can exercise further democratic control by examining petitions
+                from citizens
+                and setting up committees of inquiry.</p>
+            <p></p>
+
+            <h4 id="sep_role_2_4">Input to EU Summit </h4>
+            <p>Finally, Parliament provides input to every EU summit – i.e.
+                the European Council meetings. At the opening of each summit,
+                the President of Parliament is invited to express Parliament’s views
+                and concerns about topical issues
+                and the items on the European Council’s agenda.</p>
+            <p></p>
+
+        </div>
+        <p></p>
+
+        <h3 id="sep_role_3">Role 3: Power of the Purse </h3>
+
+        <div class="note-117">
+            <p>Parliament shares with the Council authority over the EU budget.
+                The EU's annual budget is decided jointly by Parliament and the Council.
+                The budget does not come into force until it has been
+                signed by the President of the Parliament.</p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-117">
+            <p>Parliament's <span class="note-bold">"Committee on Budgetary Control"
+                </span>
+                monitors how the budget is spent.
+                In addition, the Parliament each year decides whether to approve the
+                Commission's handling of the budget.
+                This approval process is technically known as
+                <span class="note-bold">'granting a discharge'</span>.
+
+            </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+
+
+        <h2 id="sep_work_org">How is the Parliament’s work organised?</h2>
+        <div class="note-95">
+            <p>Parliament's work is divided into two main stages.</p>
+
+            <p>
+                <a href="#sep_prep_plenary">Stage 1: Preparing for the Plenary Session </a>
+            </p>
+            <p>
+                <a href="#sep_plenary">Stage 2: The Plenary Session </a>
+            </p>
+
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+
+
+
+        <h3 id="sep_prep_plenary">Stage 1: Preparing for the Plenary Session </h3>
+
+        <div class="note-97">
+            <p>
+                MEPs debate the Commission's proposals in committees that specialise in
+                particular areas of EU activity and on the basis of
+                <span class="note-bold"> "a report prepared by one of the
+                    committee members"</span>,
+                the so-called <span class="note-bold">rapporteur</span>.
+            </p>
+
+            <p>The report gives the background and the pros and cons of the proposal.
+                The issues for debate
+                are also discussed by the political groups.</p>
+            <p></p>
+
+            <p></p>
+
+
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <h3 id="sep_plenary"> Stage 2: The Plenary Session</h3>
+
+        <div class="note-117">
+            <p>Each year, 12 four-day plenary sessions are held in Strasbourg,
+                and six two-day sessions are held in Brussels. </p>
+
+            <p>At these sessions;
+            <ul>
+                <li>Parliament examines proposed legislation, and</li>
+                <li>votes on amendments before deciding on the text as a whole.</li>
+            </ul>
+            </p>
+
+            <p>Other agenda items may include;
+
+            <ul>
+                <li>Commission
+                    <span class="note-bold">communications </span> setting out its intentions
+                    in a particular sphere
+                </li>
+                <li>Questions to the Commission or Council about what is going on
+                    in the EU or the wider world.</li>
+            </ul>
+
+            </p>
+
+            <p></p>
+
+
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+
+
+        <h2 id="sep_meps_pgs">The MEPS and the Political Groups </h2>
+
+        <p></p>
+        <div class="note-jci-green-3">
+            <p>Please Note:</p>
+            <p>
+            <ul style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: larger;
+                font-weight: bold;
+                ">
+                <li> The European Parliament model and data used in this narrative
+                    are based on the elections which were held in June 2004.</li>
+                <li>The European Parliament of 2004 elections had 785 members from all 27 EU countries.</li>
+            </ul>
+            </p>
+        </div>
+        <p></p>
+
+        <div class="note-95">
+            <p>
+            <ul>
+                <li>Members of the European Parliament (MEPs) do not sit in national blocks,
+                    but in EU-wide political groups. </li>
+                <li>Between them, they represent all views on political issues and
+                    European integration, from the strongly pro-federalist to
+                    the openly Eurosceptic.</li>
+                <li>A Political Group;
+
+                    <ol>
+                        <li>Comprises Members elected in
+                            at least one fifth of the EU countries</li>
+                        and
+                        <li>Has a minimum of 20 Members</li>
+                    </ol>
+
+                </li>
+            </ul>
+            </p>
+            <p></p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p></p>
+            <p>
+            <ul>
+                <li>There are currently seven Political Groups in the European Parliament. </li>
+                <li>Members who do not belong to any of the groups are known as
+                    <span class="note-bold">
+                        "non-attached Members &#151; non-inscrits (NI)"</span>.
+                </li>
+                <li>Political Groups have their own Staff.
+                <li>Members have Parliamentary Assistants.</li>
+            </ul>
+
+            </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <h3 id="sep_list_pg">List of Political Groups </h3>
+
+        <table>
+            <caption style="font-weight: bold;">List of Political Groups</caption>
+
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Symbol</th>
+            </tr>
+
+            <tr>
+                <td>EPP-ED</td>
+                <td>Group of the European People's Party(Christian Democrats) and
+                    European Democrats
+                </td>
+                <td>
+                    <img style="max-width: 100%; height: auto;" src="../images/eu/epp-ed-01.jpg">
+                </td>
+            </tr>
+
+            <tr>
+                <td>PES</td>
+                <td>Socialist Group in the European Parliament</td>
+                <td> <img style="max-width: 100%; height: auto;" src="../images/eu/pes-01.jpg"></td>
+            </tr>
+
+
+            <tr>
+                <td>ALDE</td>
+                <td>Group of the Alliance of Liberals and Democrats for Europe</td>
+                <td><img style="max-width: 100%; height: auto;" src="../images/eu/alde-01.jpg">
+                </td>
+            </tr>
+
+            <tr>
+                <td>UEN</td>
+                <td>Union for Europe of the Nations Group </td>
+                <td><img style="max-width: 100%; height: auto;" src="../images/eu/uen-01.jpg">
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>Greens/EFA</td>
+                <td>Group of Greens/European Free Alliance </td>
+                <td><img style="max-width: 100%; height: auto;" src="../images/eu/greens-efa-01.jpg">
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>GUE/NGL</td>
+                <td>Confederal Group of the European United
+                    Left/Nordic Green Left </td>
+                <td><img style="max-width: 100%; height: auto;" src="../images/eu/gue-ngl-01.jpg">
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>IND/DEM</td>
+                <td>Independence/Democracy Group </td>
+                <td><img style="max-width: 100%; height: auto;" src="../images/eu/ind-dem-01.jpg">
+                </td>
+            </tr>
+
+
+
+
+        </table>
+        <h3 id="sep_seat_distribution">Distribution of Seats as of August 2008 </h3>
+
+        <img style="max-width: 100%; height: auto;" src="../images/eu/seat-distr-01.jpg"
+            alt="Distribution of EP Seats as of August 2008">
+
+<p></p>
+<div class="note-117">
+    <p></p>
+
+<figcaption>
+ <b>Heatmap of European Parliament Seats as of August 2008 (seaborn / jupyter notebook)
+</b></figcaption>
+<p></p>
+<p></p>
+<img src="../images/eu/bi-seat-distr-01.jpg" style="max-width: 100%; height: auto;" alt=" Heatmap of European Parliament Seats as of August 2008">
+<p>
+<!-- Created by seaborn -->
+<!-- seat-distr jupyter source file -->
+<!-- -->
+</p>
+</figure>
+<p></p>
+      
+</div>
+        <!--      <p class="note-20"> BURADA KALDIM </p>   -->
+
+        <h2 id="sep_political_bodies">Political Bodies </h2>
+        <p>
+        <ul>
+            <li>
+                <a href="#sep_conference_pres">The Conference of the Presidents </a>
+            </li>
+            <li>
+                <a href="#sep_buraeu">Bureau </a>
+            </li>
+            <li>
+                <a href="#sep_quaestors">Quaestors </a>
+            </li>
+            <li>
+                <a href="#sep_committees">Parliamentary Committees </a>
+            </li>
+            <li>
+                <a href="#sep_delegations">Delegations</a>
+            </li>
+            <li>
+                <a href="#sep_secretariat">The Secretariat </a>
+            </li>
+        </ul>
+        </p>
+
+        <p></p>
+
+        <h3 id="sep_conference_pres">The Conference of the Presidents </h3>
+        <div class="note-97">
+
+            <p></p>
+            <p>The Conference of the Presidents is made up of;
+            <ul>
+                <li>the Chairs of the Political Groups </li>
+                <li> the President of European Parliament</li>
+            </ul>
+            </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <h4>What do the Conference of the Presidents do?</h4>
+            <p></p>
+
+            <div class="note-jci-green-2">
+                <p>
+                    The Conference of the Presidents organises practical
+                    aspects of Parliament's work and decides on all
+                    questions relating to legislative planning.
+                </p>
+            </div>
+            <p></p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <h4>Their work include:</h4>
+            <p></p>
+            <p>
+            <ul>
+                <li>Organize the Timetable and Agenda for
+                    Plenary Sittings </li>
+                <li>Decide the composition of Committees and
+                    Delegations </li>
+                <li>Decide the set of responsibilities of
+                    Committees and Delegations </li>
+                <li>Decide on all questions relating to legislative
+                    programming </li>
+            </ul>
+            </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+
+        <div class="note-97">
+
+            <div class="note-jci-green-2">
+
+                <p>
+                    It also has an important role to play in
+                    the relations between the European Parliament
+                    and the other Community institutions,
+                    third countries and extra-Community organisations.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <h3 id="sep_buraeu">Bureau</h3>
+        <div class="note-95">
+            <p></p>
+            <p>The Bureau is made up of;
+            <ul>
+                <li>the President of the European Parliament</li>
+                <li>the 14 Vice-Presidents </li>
+                <li>the six Quaestors with Observer Status</li>
+            </ul>
+            elected by the assembly for a renewable period of
+            two and a half years.
+            </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-95">
+            <h4> What does the Bureau do?</h4>
+            <p></p>
+            <div class="note-55">
+                <p>The Bureau Guides Parliament's Internal Functioning.</p>
+            </div>
+
+
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-95">
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/bureau-01.jpg" alt="Functions of Bureau">
+            </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+
+        <h3 id="sep_quaestors">Quaestors</h3>
+
+        <div class="note-117">
+            <p></p>
+            <p>
+            <ul>
+                <li>Quaestors are responsible for
+                    <span class="note-bold">"administrative
+                        and financial matters"</span>
+                    of direct concern to
+                    <span class="note-bold"> Members</span>.
+                </li>
+                <li>The six Quaestors sit on the Bureau in an
+                    <span class="note-bold">
+                        "advisory capacity" </span>.
+                </li>
+                <li>They ensure that
+                    <span class="note-bold">Members</span>
+                    have the
+                    infrastructure necessary to exercise
+                    their mandate.
+                </li>
+            </ul>
+            </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <h3 id="sep_committees">Parliamentary Committees</h3>
+
+        <div class="note-97">
+            <p></p>
+            <div class="note-jci-green-1">
+                <p>
+                    <span class="note-bold">
+                        Plenary Work</span>
+                    for the Parliament's plenary
+                    sittings takes place in
+                    <span class="note-bold">
+                        Parliament's 20 Committees
+                    </span>
+
+
+                    which cover everything from women's
+                    rights to health and consumer protection.
+                </p>
+            </div>
+            <p></p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p></p>
+            <p>
+            <ul>
+                <li>A Committee consists of between 28 and
+                    86 MEPs. </li>
+                <li> A Committee has
+                    <ul>
+                        <li>a Chair</li>
+                        <li>a Bureau</li>
+                        <li>a Secretariat</li>
+                    </ul>
+                </li>
+
+            </ul>
+            </p>
+
+
+            <p></p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p>
+            <ul>
+                <li>Parliament can also set up Subcommittees
+                    and Temporary Committees to deal with specific
+                    issues. </li>
+                <li>Parliament can also set up
+                    Committees of Inquiry under its supervisory remit. </li>
+
+            </ul>
+            </p>
+
+            <p></p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <h4>Examples</h4>
+
+        <div class="note-97">
+
+            <div class="note-jci-green-1">
+                <p><span class="note-bold">
+                        Committee on Foreign Affairs </span>
+                    chaired by Jacek SARYUZS-WOLSKI of EPP-ED, PL,
+                    and its subcommittees;
+                <ul>
+                    <li>
+                        <span class="note-bold">
+                            Subcommittee on Human Rights
+                        </span>
+                        chaired by
+                        Helene FLAUTRE of Greens/EFA, FR
+                    </li>
+                    <li>
+                        <span class="note-bold">
+                            Subcommittee on Security and Defence
+                        </span>
+                        chaired by
+                        Karl VON WOGAU of EPP-ED, DE
+                    </li>
+                </ul>
+
+                </p>
+                <p></p>
+
+                <p></p>
+            </div>
+            <p></p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p></p>
+            <div class="note-jci-green-1">
+                <p>
+                    <span class="note-bold">
+                        Committee on Budgetary Control</span>
+                    chaired by Herbert BÖSCH of PES, AT.
+
+                </p>
+                <p></p>
+            </div>
+            <p></p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p></p>
+            <div class="note-jci-green-1">
+                <p>
+                    <span class="note-bold">
+                        Temporary Committee on Climate Change
+                    </span>
+                    chaired by Guido SACCONI of PES, IT.
+                </p>
+                <p></p>
+
+            </div>
+            <p></p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <p></p>
+
+
+        <h3 id="sep_delegations">Delegations</h3>
+
+        <div class="note-95">
+            <h4>Delegations</h4>
+            <p>
+            <ul>
+                <li>Relations with countries outside the European Union are vital for
+                    the European Parliament. </li>
+                <li>It therefore has a series of Delegations which interact
+                    with the
+                    Parliaments of Countries that are NOT Members of
+                    the European Union. </li>
+                <li>They play an important role in helping to develop
+                    Europe's influence abroad. </li>
+            </ul>
+
+
+            </p>
+        </div>
+        <p></p>
+
+
+
+
+
+        <div class="note-95">
+            <h4>There are different types of Delegations</h4>
+
+            <ul>
+                <li> <span class="note-bold">Interparliamentary Delegations </span>
+                    <ul>
+                        <li>Maintain relations with Parliaments of Countries
+                            outside the European Union that have NOT applied for
+                            Membership.</li>
+                    </ul>
+                </li>
+                <li> <span class="note-bold">Joint Parliamentary Committees </span>
+                    <ul>
+                        <li>Maintain contact with the parliaments of countries that are Candidates for
+                            accession to the European Union.</li>
+                        <li>Maintain contact with the
+                            States that have association agreements with the Community.</li>
+                    </ul>
+                </li>
+                <li> <span class="note-bold">The EP's Delegation to the ACP-EU Joint Parliamentary Assembly
+                    </span>
+                    <ul>
+                        <li>Links MEPs and Parliamentarians from African, Caribbean and Pacific states.
+                        </li>
+                    </ul>
+                </li>
+                <li> <span class="note-bold">The EP Delegation to the
+                        Euro-Mediterranean Parliamentary Assembly
+                    </span>
+                    <ul>
+                        <li>also known as <span class="note-bold">EUROMED </span>
+                        </li>
+                    </ul>
+                </li>
+                <li> <span class="note-bold">The EP Delegation to the
+                        Euro-Latin American Parliamentary Assembly
+                    </span>
+                    <ul>
+                        <li>also known as <span class="note-bold">EUROLAT </span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+
+
+
+
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-95">
+            <h4>Examples of Joint Parliamentary Committees of Candidate Countries</h4>
+            <p></p>
+
+
+            <div class="note-95-a30">
+                <p><span class="note-bold">EU-Croatia </span>
+                    chaired by Pal SCHMITT of EPP-DE, HU.
+                </p>
+            </div>
+            <p></p>
+
+            <div class="note-95-a30">
+                <p><span class="note-bold">EU-Former Yugoslav Republic of Macedonia </span>
+                    chaired by Antonios TRAKATELLIS of EPP-ED, EL.
+                </p>
+            </div>
+            <p></p>
+
+            <div class="note-95-a30">
+                <p><span class="note-bold">EU-Turkey </span>
+                    chaired by Joost LAGENDIJK of Greens/EFA, NL.
+                </p>
+            </div>
+            <p></p>
+
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-95">
+            <h4>Other Examples</h4>
+            <p></p>
+
+            <div class="note-95-a30">
+                <p>
+                    <span class="note-bold">ACP-EU Joint Parliamentary Assembly </span>
+                    chaired by Glenys KINNOCK of PES, UK.
+                </p>
+
+
+            </div>
+            <p></p>
+
+            <div class="note-95-a30">
+                <p>
+                    <span class="note-bold">Euro-Mediterranean Parliamentary Assembly (EUROMED)
+                    </span>
+                    chaired by Hans Gert PÖTTERING of EPP-ED, DE.
+                </p>
+            </div>
+            <p></p>
+
+
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <h3 id="sep_secretariat">The Secretariat</h3>
+
+        <div class="note-117">
+            <p>
+                The European Parliament is assisted by a
+                <span class="note-bold">Secretariat</span>.
+            </p>
+            <p>The Secretariat's establishment plan and the
+                administrative and financial rules
+                for officials and other staff are drawn up by
+                <span class="note-bold">the Bureau</span>.
+            </p>
+            <p></p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-117">
+            <p></p>
+            <p>
+            <ul>
+                <li>The Employees are mostly officials recruited by
+                    competition from all EU countries. </li>
+                <li>The Secretariat's task is to coordinate legislative work
+                    and organise Plenary sittings and Meetings. </li>
+                <li> It provides also a fully multilingual service
+                    for all Plenary sittings and Meetings. </li>
+                <li>The Secretariat is located in Luxembourg and Brussels,
+                    whereas ordinary Plenary sessions are held in Strasbourg. </li>
+            </ul>
+            </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-117">
+            <p>Below is a photo of the EU Complex in Luxembourg.</p>
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/eu-complex-lux-01.jpg"
+                    alt="A photo of the EU Complex in Luxembourg">
+
+            </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-117">
+            <p>The Secretary-General of the European Parliament is Harald Romer.</p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <div class="note-117">
+            <p>Some of the Directorate-Generals of the Secretariat are;</p>
+            <p>
+            <ul>
+                <li>DG Internal Policies</li>
+                <li>DG Communication</li>
+                <li>DG Finance</li>
+                <li>DG Infrastructure and Logistics</li>
+                <li>DG Innovation and Technological Support</li>
+
+            </ul>
+            </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+        <h2 id="sep_places_of_work">Where is the Parliament based?</h2>
+        <div class="note-95">
+            <p>The European Parliament has three places of work:</p>
+            <p>
+            <ul>
+                <li>Brussels (Belgium)</li>
+                <li>Luxembourg</li>
+                <li>Strasbourg (France)</li>
+            </ul>
+            </p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+
+
+
+        </div>
+        <p></p>
+
+
+        <div class="note-95">
+            <p>
+            <figure>
+                <figcaption style="font-weight: bold;
+            text-align: center;"> European Parliament in Brussels</figcaption>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/ep-brussels-01.jpg"
+                    alt="European Parliament in Brussels">
+            </figure>
+            </p>
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p> <span style="font-size: 30px;">
+                    &#9827;
+                </span>
+                Luxembourg is home to the Administrative Offices
+                <span class="note-bold">&#151;
+                    the General Secretariat</span>.
+            </p>
+            <p> <span style="font-size: 30px;">
+                    &#9827;
+                </span>
+                Meetings of the whole Parliament, known as
+                <span class="note-bold">Plenary Sessions</span>,
+                take place in Strasbourg and sometimes in Brussels.
+            </p>
+            <p> <span style="font-size: 30px;">
+                    &#9827;
+                </span>
+                Committee meetings are also held in Brussels.</p>
+            <p></p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+
+            <p>
+            <figure>
+                <figcaption style="font-weight: bold;
+                    text-align: center;"> European Parliament in Brussels</figcaption>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/ep-brussels-02.jpg"
+                    alt="European Parliament in Brussels">
+            </figure>
+            </p>
+
+        </div>
+        <p></p>
+
+
+        <h1 id="sconseu">The Council of the European Union</h1>
+
+        <p></p>
+
+        <div class="note-jci-green-3">
+            <p>Please Note:</p>
+            <p>
+            <ul style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: larger;
+            font-weight: bold;
+            ">
+                <li> The Model and Data used in this narrative
+                    are based on the European Parliament elections which were held in June 2004.</li>
+                <li>The European Parliament of 2004 elections had 785 members from all 27 EU countries.</li>
+            </ul>
+            </p>
+        </div>
+        <p></p>
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+font-weight: bold;
+font-size: larger;
+" href="#sconseu_conseu"> The Council of the European Union </a>
+        </p>
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+font-weight: bold;
+font-size: larger;
+" href="#sconseu_mins"> Which Ministers Attend Which Meeting</a>
+        </p>
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+font-weight: bold;
+font-size: larger;
+" href="#sconseu_config"> Council Configurations</a>
+        </p>
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+font-weight: bold;
+font-size: larger;
+" href="#sconseu_config_excp">Exception to Council Configurations</a>
+        </p>
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+font-weight: bold;
+font-size: larger;
+" href="#sconseu_mins_power">Power of Each Council Minister </a>
+        </p>
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+font-weight: bold;
+font-size: larger;
+" href="#sconseu_summit">SUMMIT of the European Council </a>
+        </p>
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+font-weight: bold;
+font-size: larger;
+" href="#sconseu_which">Three 'Councils': Which is Which? </a>
+        </p>
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+font-weight: bold;
+font-size: larger;
+" href="#sconseu_does">What does the Council do? </a>
+        </p>
+        <p>
+        <ul>
+            <li> <a href="#sconseu_key_resp"> Six Key Responsibilities</a> </li>
+            <li> <a href="#sconseu_pillars">Key Responsibilities and the Three Pillars of the EU </a> </li>
+            <li> <a href="#sconseu_key_details">Key Responsibilities in Detail </a> </li>
+            <ul>
+                <li><a href="#sconseu_kr1">KR 1 Legislation </a> </li>
+                <li><a href="#sconseu_kr2"> KR 2 Coordinating the Policies of Member States</a> </li>
+                <li><a href="#sconseu_kr3">KR 3 Concluding International Agreements </a> </li>
+                <li><a href="#sconseu_kr4"> KR 4 Approving the EU Budget</a> </li>
+                <li><a href="#sconseu_kr5"> KR 5 Common Foreign and Security Policy (CFSP)</a> </li>
+                <li><a href="#sconseu_kr6">KR 6 Freedom, Security and Justice </a> </li>
+            </ul>
+
+        </ul>
+        </p>
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+font-weight: bold;
+font-size: larger;
+" href="#sconseu_org">How is the Council’s work organised? </a>
+        </p>
+
+        <p>
+        <ul>
+            <li><a href="#sconseu_org_pres">The Council Presidency </a> </li>
+            <li><a href="#sconseu_org_gensec">The General Secretariat </a> </li>
+            <li><a href="#sconseu_org_coreper"> Coreper </a> </li>
+            <li><a href="#sconseu_org_sec"> Security and Defence </a> </li>
+            <li><a href="#sconseu_org_votes">How many votes per country? </a> </li>
+            <li><a href="#sconseu_org_qualmajvote"> Qualified Majority Voting</a> </li>
+        </ul>
+        </p>
+
+
+        <div class="note-95">
+            <p></p>
+            <p>
+            <figure>
+                <figcaption style="font-weight: bold;
+                    text-align: center;"></figcaption>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/council-01.jpg"
+                    alt="The Council of the European Union">
+            </figure>
+            </p>
+        </div>
+        <p></p>
+
+        <h2 id="sconseu_conseu">The Council of the European Union </h2>
+        <div class="note-95">
+            <p></p>
+            <ul>
+                <li><span class="note-bold"> The Council of the European Union </span> is the EU's main <span
+                        class="note-bold">Decision-Making </span>
+                    body. </li>
+                <li>Like the European Parliament, <span class="note-bold">the Council of the European Union </span>
+                    was set up by the founding Treaties in the 1950s.</li>
+                <li> <span class="note-bold">The Council of the European Union </span> represents the <span
+                        class="note-bold">Member States</span>. </li>
+                <li>Meetings of <span class="note-bold">the Council of the European Union </span> are attended by
+                    <span class="note-bold">one Minister </span>
+                    from each of the EU's National Governments.
+                </li>
+            </ul>
+            </p>
+        </div>
+        <p></p>
+
+
+        <h2 id="sconseu_mins">Which Ministers Attend Which Meeting</h2>
+        <div class="note-97">
+            <p></p>
+            <p>
+            <ul>
+                <li><span class="note-bold">"Which Ministers attend Which Meeting?" </span> depends on
+                    <span class="note-bold">"What Subjects?"</span> are on the Agenda.
+                </li>
+                <li>
+                    If, for example, the Council is to discuss
+                    <span class="note-bold">Environmental Issues</span>,
+                    the meeting will be attended by the <span class="note-bold">Environment Minister </span> from each
+                    EU country,
+                    and it will be known as the <span class="note-bold">'Environment Council'</span>.
+
+                </li>
+            </ul>
+            </p>
+        </div>
+        <p></p>
+
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+
+        <h2 id="sconseu_config">Council Configurations</h2>
+
+
+        <div class="note-117">
+            <p style="color: rgb(8, 51, 143);">
+                Altogether, there are
+                <span class="note-bold">nine</span>
+                different <span class="note-bold">Council Configurations</span>.
+            </p>
+            <p></p>
+            <p>
+            <ul>
+                <li>General Affairs and External Relations</li>
+                <li>Economic and Financial Affairs (Ecofin)</li>
+                <li>Justice and Home Affairs</li>
+                <li>Employment, Social Policy, Health and Consumer Affairs</li>
+                <li>Competitiveness</li>
+                <li>Transport, Telecommunications and Energy</li>
+                <li>Agriculture and Fisheries</li>
+                <li>Environment</li>
+                <li>Education, Youth and Culture</li>
+
+            </ul>
+            </p>
+
+        </div>
+        <p></p>
+
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+        <h2 id="sconseu_config_excp">Exception to Council Configurations</h2>
+        <div class="note-95">
+            <p></p>
+            <p>The EU's relations with the rest of the world
+                are dealt with by the
+                <span class="note-bold">'General Affairs and External Relations Council'</span>.
+
+
+
+                <span class="note-bold"> </span>
+            </p>
+            <p>But this Council Configuration also has wider responsibility
+                for <span class="note-bold">General Policy Issues</span>.
+                <span class="note-bold"> </span>
+                <span class="note-bold"> </span>
+            </p>
+
+            <p>Therefore,
+                its meetings are attended by, whichever <span class="note-bold">Minister </span> or
+                <span class="note-bold">State Secretary </span> each Government chooses.
+                <span class="note-bold"> </span>
+                <span class="note-bold"> </span>
+            </p>
+
+        </div>
+        <p></p>
+
+        <h2 id="sconseu_mins_power">Power of Each Council Minister </h2>
+        <div class="note-97">
+            <p style="color: rgb(8, 51, 143); 
+            font-weight: bold;
+            ">Power of Each Council Minister</p>
+            <p>
+            <ul>
+                <li>Each Minister in the Council is empowered to commit
+                    his or her government.
+                </li>
+                <li>In other words, the Minister's signature is
+                    the signature of the whole government.
+                </li>
+
+            </ul>
+            </p>
+            <p style="color: rgb(8, 51, 143);
+            font-weight: bold;">Democratic Legitimacy of the Council's Decisions
+            </p>
+            <p>
+            <ul>
+                <li>Each Minister in the Council is answerable to
+                    his or her National Parliament and to
+                    the Citizens that Parliament represents
+                </li>
+                <li>Together with the European Parliament's involvement in
+                    decision-making,
+                    this ensures the Democratic Legitimacy of the Council's decisions.
+                </li>
+            </ul>
+            </p>
+
+        </div>
+        <p></p>
+
+
+        <h2 id="sconseu_summit">SUMMIT of the European Council </h2>
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+        <div class="note-117">
+            <p style="color: rgb(8, 51, 143);
+font-weight: bold;
+font-size: larger;">The European Council / Summit</p>
+
+            <p>
+                Up to four times a year
+            <ul>
+                <li> <span class="note-bold"> the Presidents and/or Prime Ministers
+                        of the EU countries</span>, </li>
+                together with
+                <li><span class="note-bold">the President of the European Commission</span>,</li>
+            </ul>
+
+            meet as <span class="note-bold">the European Council</span>.
+
+            </p>
+
+        </div>
+        <p></p>
+
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+        <div class="note-117">
+            <p style="color: rgb(8, 51, 143);
+font-weight: bold;
+font-size: larger;">The European Council / Summit</p>
+
+            <p>These <span class="note-bold">SUMMIT</span>
+                meetings set <span class="note-bold">overall EU Policy</span>
+                and
+                <span class="note-bold">resolve issues</span>
+                that
+                could not be settled at a lower level,
+                i.e. by the Ministers at normal Council of the European Union Meetings.
+            </p>
+
+        </div>
+        <p></p>
+
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+        <div class="note-117">
+            <p style="color: rgb(8, 51, 143);
+font-weight: bold;
+font-size: larger;">The European Council / Summit</p>
+            <p>Given the importance of
+                <span class="note-bold">the European Council</span> discussions,
+                they often go on late into the night and attract a lot of media attention.
+            </p>
+
+        </div>
+        <p></p>
+
+
+        <h2 id="sconseu_which">Three 'Councils': Which is Which? </h2>
+
+        <p>It’s easy to get confused about which European body is which – especially when
+            very different bodies have very similar names, such as these three 'Councils'.</p>
+
+        <p><a href="#sconseu_which_01">The Council of Europe - not an EU institution at all </a> </p>
+        <p><a href="#sconseu_which_02">The European Council </a> </p>
+        <p><a href="#sconseu_which_03">The Council of the European Union </a> </p>
+
+        <div class="note-95">
+            <p id="sconseu_which_01" style="color: rgb(8, 51, 143);
+            font-weight: bold;
+            font-size: larger;">
+                The Council of Europe - not an EU institution at all </p>
+            <p>This is not an EU institution at all. </p>
+            <p>It is an intergovernmental organisation which aims (amongst other things)
+                to protect human rights, to promote Europe's cultural diversity
+                and to combat social problems
+                such as racial prejudice and intolerance. </p>
+            <p>It was set up in 1949 and one of its early achievements was
+                to draw up the European convention on Human Rights. </p>
+            <p>To enable citizens to exercise their rights under that convention,
+                it set up the European Court of Human Rights. </p>
+            <p> The Council of Europe now has 47 member countries,
+                including all 27 European Union countries,
+                and its headquarters is the Palais de l'Europe in Strasbourg (France).</p>
+
+
+        </div>
+        <p></p>
+
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+        <div class="note-97">
+            <p id="sconseu_which_02" style="color: rgb(8, 51, 143);
+            font-weight: bold;
+            font-size: larger;"> The European Council
+            </p>
+            <p>
+                <span class="note-bold">The European Council </span> means;
+            <ul>
+                <li> <span class="note-bold">the Heads of State or Government
+                        of all the EU countries
+                    </span></li>
+                <span style="font-weight: bold;
+               font-size: 200%;"> + </span>
+                <li> <span class="note-bold">the President of the European Commission</span></li>
+            </ul>
+
+            </p>
+            <p>It depends on the political system of
+                each country whether their participant is
+                <span class="note-bold">the President and/or
+                    the Prime Minister</span>.
+            </p>
+            <p> <span class="note-bold">The European Council</span>
+                meets, in principle,
+                four times a year to agree overall EU policy and to review progress. </p>
+            <p><span class="note-bold">The European Council</span> is
+                the Highest Level policy making body in the European Union,
+                which is why its meetings are often called
+                <span class="note-bold">'SUMMIT'</span>s.
+            </p>
+            <p></p>
+
+        </div>
+        <p></p>
+
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+        <div class="note-117">
+            <p id="sconseu_which_03" style="color: rgb(8, 51, 143);
+            font-weight: bold;
+            font-size: larger;"> The Council of the European Union </p>
+            <p>Formerly known as the Council of Ministers,
+                this institution consists of
+                <span class="note-bold">Government Ministers</span>
+                from all the EU countries.
+            </p>
+            <p><span class="note-bold">The Council of the European Union </span>
+                meets regularly to take detailed decisions
+                and to pass EU laws. </p>
+            <p>A full description of the work of
+                <span class="note-bold">The Council of the European Union </span>
+                is given in this <span class="note-bold">
+                    Business Narrative of The
+                    Story of the European Union</span>.
+            </p>
+            <p></p>
+        </div>
+        <p></p>
+
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+        <h2 id="sconseu_does">What does the Council do?</h2>
+        <p>
+            <img style="max-width: 100%; height: auto;" src="../images/eu/council-does-01.jpg"
+                alt="A Photo of Underground Station Near the Council">
+        </p>
+
+
+        <h3 id="sconseu_key_resp">Six Key Responsibilities </h3>
+        <p>The Council has six Key Responsibilities:</p>
+
+        <div class="note-95">
+            <p> <span class="note-bold">KR 1 </span>
+                To pass EU laws – jointly with the European Parliament in many policy areas.</p>
+            <p> <span class="note-bold">KR 2 </span>
+                To coordinate the broad economic and social policies of the Member States.
+            </p>
+            <p> <span class="note-bold">KR 3 </span>
+                To conclude international agreements between the EU and
+                other countries or international organisations.
+            </p>
+            <p> <span class="note-bold">KR 4 </span>
+                To approve the EU’s budget, jointly with the European Parliament.
+            </p>
+            <p> <span class="note-bold">KR 5 </span>
+                To define and implement the EU’s Common Foreign and Security Policy (CFSP)
+                based on guidelines set by the European Council.
+            </p>
+            <p> <span class="note-bold">KR 6 </span>
+                To coordinate cooperation between the National Courts and
+                Police Forces in criminal matters.
+            </p>
+
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+        </div>
+        <p></p>
+
+
+
+        <h3 id="sconseu_pillars">Key Responsibilities and the Three Pillars of the EU</h3>
+        <div class="note-95">
+
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/council-does-02.jpg"
+                    alt="Key Responsibilities and the Three Pillars of the EU">
+            </p>
+
+        </div>
+        <p></p>
+
+
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+        <div class="note-97">
+            <p>Most of these Responsibilities,
+                <span class="note-bold">KR 1, KR2, KR 3, KR 4</span>,
+                relate to the
+                <span class="note-bold">Community Domain</span> – i.e. areas
+                of action where the member states have decided to pool their sovereignty and
+                delegate decision making powers to the EU Institutions.
+            </p>
+            <p> This domain is the
+                <span class="note-bold">FIRST PILLAR</span>
+                of the EU.
+            </p>
+
+        </div>
+        <p></p>
+
+        <div class="note-117">
+            <p></p>
+
+
+            <p>However, the last two responsibilities,
+                <span class="note-bold"> KR 5 and KR 6</span>,
+                relate largely to areas
+                in which the EU countries
+                <span class="note-bold">Have Not</span>
+                delegated their powers but are simply working together.
+                <span class="note-bold"> </span>
+                <span class="note-bold"> </span>
+            </p>
+
+            <p>This is called intergovernmental cooperation and
+                it covers <span class="note-bold">the SECOND and THIRD PILLARS</span>
+                of the EU.
+
+                <span class="note-bold"> </span>
+                <span class="note-bold"> </span>
+            </p>
+        </div>
+        <p></p>
+
+        <div class="note-95">
+
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/council-does-03.jpg" alt="The Council of the EU">
+            </p>
+
+        </div>
+        <p></p>
+
+
+        <h3 id="sconseu_key_details">Key Responsibilities in Detail </h3>
+
+        <h4 id="sconseu_kr1">KR 1 Legislation</h4>
+        <div class="note-95">
+            <p>The bulk of the Council's work is in passing legislation in areas
+                where the EU has pooled its sovereignty. </p>
+            <p>The most common procedure for this is
+                <span class="note-bold">'Codecision'</span>,
+                where EU legislation is adopted jointly by
+                the Council and Parliament on the basis of a proposal from the Commission.
+            </p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+        <p></p>
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+        <div class="note-97">
+            <p></p>
+            <p>In some areas, the Council has the final word but only on the
+                basis of a Commission proposal and only after having taken into account
+                the views of the Commission and the Parliament.</p>
+        </div>
+        <p></p>
+
+
+        <h4 id="sconseu_kr2">KR 2 Coordinating the Policies of Member States </h4>
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+        <div class="note-95">
+            <p>The EU countries have decided that they want an overall economic policy based on
+                close coordination between their national economic policies. </p>
+            <p>This coordination is carried out by the economics and finance ministers,
+                who collectively form
+                <span class="note-bold">the Economic and Financial Affairs (Ecofin) Council</span>.
+            </p>
+            <p></p>
+
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+            <p>They also want to create more jobs and to improve their education,
+                health and social protection systems. </p>
+            <p>Although each EU country is responsible for its own policy
+                in these areas, they can agree on common goals and
+                learn from each other's experience of what works best. </p>
+            <p>This process is called the
+                <span class="note-bold">Open Method of Coordination</span>
+                and it takes place within the Council.
+            </p>
+
+        </div>
+        <p></p>
+
+        <h4 id="sconseu_kr3">KR 3 Concluding International Agreements </h4>
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+        <div class="note-95">
+            <p>Each year, the Council
+                <span class="note-bold">'concludes' i.e. officially signs) </span>
+                a number of agreements between the European Union and non-EU countries,
+                as well as with international organisations.
+            </p>
+            <p>These agreements may cover broad areas such as trade, cooperation
+                and development or they may deal with specific subjects such as
+                textiles, fisheries, science and technology, transport, etc.</p>
+            <p></p>
+            <p></p>
+
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p>In addition, the Council may conclude conventions between
+                the EU Member States in fields
+                such as taxation, company law or consular protection. </p>
+            <p>Conventions can also deal with
+                cooperation on issues of freedom, security and justice.</p>
+            <p></p>
+            <p></p>
+        </div>
+        <p></p>
+
+        <h4 id="sconseu_kr4">KR 4 Approving the EU Budget</h4>
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+        <div class="note-95">
+            <p>The EU's annual budget is decided jointly by
+                the Council and the European Parliament.</p>
+
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/council-does-04.jpg" alt="The Council of the EU">
+            </p>
+
+        </div>
+        <p></p>
+
+
+        <h4 id="sconseu_kr5">KR 5 Common Foreign and Security Policy (CFSP)</h4>
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+        <div class="note-95">
+            <p>The EU countries are working to develop a
+                Common Foreign and Security Policy (CFSP).</p>
+            <p>But Foreign Policy, Security and Defence are matters over which
+                the individual National Governments
+                retain independent control. </p>
+            <p>However, the EU countries have recognised the advantages of
+                <span class="note-bold">working together</span>
+                on these issues,
+                and the <span class="note-bold">Council</span>
+                is the main forum in which this
+                <span class="note-bold">'Intergovernmental Cooperation'</span>
+                takes place.
+            </p>
+            <p></p>
+            <p></p>
+
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p>This cooperation not only covers defence issues, but also crisis management tasks,
+                such as humanitarian and rescue operations,
+                peacekeeping and peacemaking in trouble spots. </p>
+
+            <p></p>
+        </div>
+        <p></p>
+
+        <div class="note-117">
+            <p>The EU countries try to mobilise and coordinate military and police forces,
+                so that they can be used in coordination with diplomatic and economic action. </p>
+            <p>Through these mechanisms, the EU has helped to maintain peace,
+                build democracy and spur economic progress in places as far apart as Indonesia,
+                the Democratic Republic of the Congo and the countries of south-eastern Europe.</p>
+
+            <p></p>
+            <p></p>
+        </div>
+        <p></p>
+        <div class="note-95">
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/council-does-05.jpg" alt="The Council of the EU">
+            </p>
+
+        </div>
+        <p></p>
+
+        <h4 id="sconseu_kr6">KR 6 Freedom, Security and Justice</h4>
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+        <div class="note-95">
+            <p>EU citizens are free to live and work in whichever EU country they choose,
+                so they should have equal access to civil justice
+                everywhere in the European Union. </p>
+            <p>National courts therefore need to work together to ensure,
+                for example, that a court judgment delivered in one
+                EU country in a divorce or child custody case
+                is recognised in all other EU countries.</p>
+
+            <p></p>
+            <p></p>
+
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p>Freedom of movement within the EU is of great benefit to law-abiding citizens,
+                but it is also exploited by international criminals and terrorists. </p>
+            <p>To tackle cross-border crime requires
+                cross-border cooperation between the national courts,
+                police forces, customs officers and immigration services of all EU countries.</p>
+
+            <p></p>
+            <p></p>
+
+        </div>
+        <p></p>
+
+        <div class="note-117">
+            <p>They have to ensure, for example:</p>
+            <p>
+            <ul>
+                <li>that the EU’s external borders are effectively policed </li>
+                <li>that customs officers and police exchange information
+                    on the movements of suspected drugs traffickers or people smugglers </li>
+                <li>that asylum seekers are assessed and treated in the same way
+                    throughout the EU, so as to prevent 'asylum shopping' </li>
+            </ul>
+            </p>
+
+            <p>Issues such as these are dealt with by the Justice and Home Affairs Council
+                — i.e. the Ministers for Justice and of the Interior.</p>
+            <p>The aim is to create a
+                <span class="note-bold">'Single Area of Freedom, Security and Justice'</span>
+                within the EU's borders.
+            </p>
+
+        </div>
+        <p></p>
+
+
+        <h2 id="sconseu_org">How is the Council’s work organised? </h2>
+
+        <p></p>
+
+
+        <h3 id="sconseu_org_pres">The Council Presidency </h3>
+        <div class="note-95">
+            <p>The Presidency is held by each Member State, on a rotating basis,
+                for a period of six months
+                – January to June and July to December. </p>
+            <p>In In other words, each EU country in turn takes charge
+                of the Council agenda and chairs all the meetings for a six-month period,
+                promoting legislative
+                and political decisions and brokering compromises between the Member States.</p>
+            <p></p>
+            <p>
+            <table>
+                <caption style="font-weight: bold;">
+                    Pre-Arranged Order of Presidencies
+                </caption>
+                <tr>
+                    <th>Year</th>
+                    <th>First Half</th>
+                    <th>Second Half</th>
+                </tr>
+
+                <tr>
+                    <td>2008</td>
+                    <td>Slovenia</td>
+                    <td>France</td>
+                </tr>
+
+                <tr>
+                    <td>2009</td>
+                    <td>Czech Republic</td>
+                    <td>Sweden</td>
+                </tr>
+
+                <tr>
+                    <td>2010</td>
+                    <td>Spain</td>
+                    <td>Belgium</td>
+                </tr>
+
+                <tr>
+                    <td>2011</td>
+                    <td>Hungary</td>
+                    <td>Poland</td>
+                </tr>
+
+                <tr>
+                    <td>2012</td>
+                    <td>Denmark</td>
+                    <td>Cyprus</td>
+                </tr>
+
+                <tr>
+                    <td>2013</td>
+                    <td>Ireland</td>
+                    <td>Lithuania</td>
+                </tr>
+
+                <tr>
+                    <td>2014</td>
+                    <td>Greece</td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <td>2015</td>
+                    <td>Latvia</td>
+                    <td>Luxembourg</td>
+                </tr>
+
+                <tr>
+                    <td>2016</td>
+                    <td>Netherlands</td>
+                    <td>Slovakia</td>
+                </tr>
+
+                <tr>
+                    <td>2017</td>
+                    <td>Malta</td>
+                    <td>United Kingdom</td>
+                </tr>
+
+                <tr>
+                    <td>2018</td>
+                    <td>Estonia</td>
+                    <td>Bulgaria</td>
+                </tr>
+
+                <tr>
+                    <td>2019</td>
+                    <td>Austria</td>
+                    <td>Romania</td>
+                </tr>
+
+                <tr>
+                    <td>2020</td>
+                    <td>Finland</td>
+                    <td></td>
+                </tr>
+            </table>
+            </p>
+
+
+        </div>
+        <p></p>
+
+
+
+        <h3 id="sconseu_org_gensec">The General Secretariat </h3>
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+        <div class="note-95">
+            <p>The Presidency is assisted by the General Secretariat,
+                which prepares and ensures the smooth
+                functioning of the Council’s work at all levels. </p>
+            <p>In 2004, Javier Solana was reappointed
+                Secretary-General of the Council.
+                He is also High Representative for the
+                Common Foreign and Security Policy (CFSP) and in this capacity
+                he helps coordinate the EU's action on the world stage.
+            </p>
+            <p>The Secretary-General is assisted by a Deputy Secretary-General
+                in charge of managing the General Secretariat.</p>
+            <p></p>
+            <p></p>
+
+        </div>
+        <p></p>
+
+
+        <h3 id="sconseu_org_coreper">Coreper </h3>
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+        <div class="note-95">
+            <p>In Brussels, each EU country has a
+                <span class="note-bold">Permanent Team (Representation) </span>
+                that represents it and
+                defends its national interest at EU level.
+            </p>
+            <p>The Head of each Representation is,
+                in effect, that
+                <span class="note-bold">Country's Ambassador to the EU</span>.
+            </p>
+            <p>
+                These Ambassadors are known as
+                <span class="note-bold">Permanent Representatives </span>
+                and meet
+                weekly within
+                <span class="note-bold">
+                    the Permanent Representatives Committee (Coreper)</span>.
+            </p>
+            <p>The role of this committee is to prepare the work of the Council,
+                with the exception of most agricultural issues,
+                which are handled by the Special Committee on Agriculture. </p>
+            <p>Coreper is assisted by a number of working groups, attended
+                by officials from the representations or national administrations.</p>
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/coreper-01.jpg" alt="The Council of the EU">
+            </p>
+
+        </div>
+        <p></p>
+
+
+
+        <h3 id="sconseu_org_sec">Security and Defence </h3>
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+        <div class="note-95">
+            <p>The Council is assisted by a
+                separate structure in matters of
+                <span class="note-bold">Security and Defence</span>:
+            </p>
+            <p>
+            <ul>
+                <li><span class="note-bold">The Political and Security Committee (PSC)</span>,
+                    which is to this cooperation what Coreper is
+                    to other types of decisions.</li>
+                <li><span class="note-bold">The European Union Military Committee (EUMC)</span>,
+                    made up of the
+                    <span class="note-bold">Member States' Chiefs of Defence Staff</span>.
+                </li>
+                <li><span class="note-bold">The European Union Military Staff (EUMS)</span>, composed of military and
+                    civilian experts seconded to the Council Secretariat
+                    by the Member States.</li>
+                <li><span class="note-bold">The Committee for the Civilian Aspects of Crisis Management</span>.</li>
+            </ul>
+            </p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+        <p></p>
+
+
+        <h3 id="sconseu_org_votes">How many votes per country? </h3>
+
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+        <div class="note-95">
+            <p>Decisions in the Council are taken by vote. </p>
+            <p>The bigger the country's population, the more votes it has,
+                but the numbers are weighted
+                in favour of the less populous countries:</p>
+            <p></p>
+            <p>
+            <table>
+                <tr>
+                    <td>France, Germany, Italy and the United Kingdom </td>
+                    <td>29</td>
+                </tr>
+                <tr>
+                    <td>Poland and Spain </td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td>Romania </td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>Netherlands </td>
+                    <td>13</td>
+                </tr>
+                <tr>
+                    <td>Belgium, Czech Republic, Greece, Hungary and Portugal </td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>Austria, Bulgaria, Sweden </td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Denmark, Finland, Ireland, Lithuania and Slovakia </td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>Cyprus, Estonia, Latvia, Luxembourg and Slovenia </td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Malta </td>
+                    <td>3</td>
+                </tr>
+                <tr style="font-weight: bold; font-size: larger;">
+                    <td>Total</td>
+                    <td>345</td>
+                </tr>
+            </table>
+            </p>
+            <p></p>
+        </div>
+        <p></p>
+
+
+
+        <h3 id="sconseu_org_qualmajvote">Qualified majority voting </h3>
+        <span class="note-bold"> </span>
+        <span class="note-bold"> </span>
+
+        <div class="note-95">
+            <p>In some particularly sensitive areas such as common foreign and security policy, taxation, asylum and
+                immigration policy,
+                Council decisions have to be unanimous. </p>
+            <p>In other words, each member state has the power of veto in these areas.</p>
+            <p>On most issues, however, the Council takes decisions by
+                <span class="note-bold">Qualified Majority Voting</span>.
+            </p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/qualified-majority-01.jpg"
+                    alt="Qualified Majority Thinking">
+            </p>
+            </p>
+            <p>A Qualified Majority is reached:</p>
+            <p>
+            <ul>
+                <li>If a majority of member states
+                    (in some cases a two-thirds majority) approve </li>
+                AND
+                <li>If a minimum of 255 votes is cast in favour
+                    — which is 73.9% of the total.</li>
+            </ul>
+            </p>
+            <p>In addition, a member state may ask for confirmation that the votes
+                in favour represent
+                at least 62% of the total population of the Union. </p>
+            <p>If this is found not to be the case,
+                the decision will not be adopted.</p>
+        </div>
+        <p></p>
+
+
+        <h1 id="scommeu">The European Commission</h1>
+
+
+        <p></p>
+
+        <div class="note-jci-green-3">
+            <p>Please Note:</p>
+            <p>
+            <ul style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: larger;
+            font-weight: bold;
+            ">
+                <li> The Model and Data used in this narrative
+                    are based on the European Parliament elections which were held in June 2004.</li>
+                <li>The European Parliament of 2004 elections had 785 members from all 27 EU countries.</li>
+            </ul>
+            </p>
+        </div>
+        <p></p>
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+font-weight: bold;
+font-size: larger;
+" href="#scommeu_scommeu">The European Commission </a>
+        </p>
+
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+font-weight: bold;
+font-size: larger;
+" href="#scommeu_what">What is the Commission? </a>
+        </p>
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+font-weight: bold;
+font-size: larger;
+" href="#scommeu_appt">Commission Appointment </a>
+        </p>
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+font-weight: bold;
+font-size: larger;
+" href="#scommeu_where">Where is the Commission based? </a>
+        </p>
+
+        <p>
+            <a style="color: rgb(222, 59, 33);
+font-weight: bold;
+font-size: larger;
+" href="#scommeu_does">What does the Commission do? </a>
+        </p>
+
+        <ul>
+            <li>
+                <p><a href="#scommeu_does_1">Proposing New Legislation </a> </p>
+            </li>
+            <li>
+                <p><a href="#scommeu_does_2">Implementing EU Policies and the Budget </a> </p>
+            </li>
+            <li>
+                <p><a href="#scommeu_does_3">Enforcing European Law </a> </p>
+            </li>
+            <li>
+                <p><a href="#scommeu_does_4">Representing the EU on the International Stage </a> </p>
+            </li>
+        </ul>
+        <p>
+            <a style="color: rgb(222, 59, 33);
+font-weight: bold;
+font-size: larger;
+" href="#scommeu_org">How is the Commission's work organised? </a>
+        </p>
+
+
+
+
+        <h2 id="scommeu_scommeu">The European Commission</h2>
+        <p>
+            <img style="max-width: 100%; height: auto;" src="../images/eu/comm-01.jpg" alt="The European Commission">
+        </p>
+
+        <div class="note-95">
+            <p>The Commission is independent of national governments.
+                Its job is to represent and uphold the interests of the EU as a whole.
+                It drafts proposals for new European laws,
+                which it presents to the European Parliament (EP) and the Council.</p>
+            <p></p>
+            <p><img style="max-width: 100%; height: auto;" src="../images/eu/comm-02.jpg" alt="The European Commission"></p>
+
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p>It is also the EU’s executive arm — in other words,
+                it is responsible for implementing the
+                decisions of Parliament and the Council.
+                That means managing the day-to-day business of the European Union:
+                implementing its policies, running its programs and spending its funds.</p>
+            <p>Like the EP and the Council, the European Commission was set up in the 1950s
+                under the EU’s founding Treaties.</p>
+
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/comm-03.jpg" alt="The European Commission">
+            </p>
+        </div>
+        <p></p>
+
+
+
+        <h2 id="scommeu_what">What is the Commission?</h2>
+        <div class="note-95">
+            <p>The term 'Commission' is used in two senses:</p>
+            <p>
+            <ul>
+                <li>First, it refers to the team of men and women – one from each EU country –
+                    appointed to run the institution and take its decisions. </li>
+                <li> Secondly, the term 'Commission' refers to the institution itself
+                    and to its staff.</li>
+            </ul>
+            </p>
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/comm-04.jpg" alt="The European Commission">
+            </p>
+
+        </div>
+        <p></p>
+
+        <div class="note-95">
+            <p>Informally, the appointed members of the Commission are known
+                as 'Commissioners'. </p>
+            <p>They have generally held Political Positions in their Countries of Origin
+                and many have been Government Ministers.</p>
+            <p>But, as Members of the Commission
+                they are committed to acting in the interests of the Union as a whole and
+                Not taking instructions from National Governments.</p>
+
+
+        </div>
+        <p></p>
+
+
+        <h2 id="scommeu_appt">Commission Appointment</h2>
+
+        <div class="note-97">
+            <p>A new Commission is appointed every five years
+                within six months of the elections to the European Parliament. </p>
+            <p></p>
+            <p>The procedure is as follows:</p>
+            <p></p>
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/comm-05.jpg" alt="Commission Appointment Procedure">
+            </p>
+            <p></p>
+        </div>
+        <p></p>
+
+
+        <div class="note-117">
+            <p>The present Commission's term of office runs until 31 October 2009.
+                Its President is José Manuel Barroso.</p>
+            <p>The Commission remains politically accountable to Parliament,
+                which has the power to dismiss the whole Commission by adopting a motion of censure.
+                Individual members of the Commission
+                must resign if asked to do so by the President
+                and the other commissioners approve.</p>
+            <p></p>
+
+        </div>
+        <p></p>
+
+        <div class="note-117">
+            <p>The Commission is represented at all sessions of Parliament,
+                where it must clarify and justify its policies.
+                It also replies regularly to written and oral questions posed by MEPs.</p>
+            <p></p>
+            <p></p>
+
+        </div>
+        <p></p>
+
+        <div class="note-117">
+            <p>The day-to-day running of the Commission is in the hands
+                of administrative officials, experts,
+                translators, interpreters and secretarial staff. </p>
+            <p>There are approximately 23 000 of these European civil servants. </p>
+            <p>That may sound a lot, but in fact it is fewer than the number of staff
+                employed by a typical medium-sized city council in Europe.</p>
+
+        </div>
+        <p></p>
+        <h2 id="scommeu_where">Where is the Commission based?</h2>
+        <div class="note-95">
+
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/comm-06.jpg" alt="Commission is Based in Berlaymont">
+            </p>
+
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p></p>
+            <p></p>
+            <p>The 'seat' of the Commission is in Brussels (Belgium), but it also has offices in Luxembourg,
+                representations in all EU countries and delegations in many capital cities around the world.</p>
+
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/comm-07.jpg" alt="European Commission Offices">
+            </p>
+        </div>
+        <p></p>
+
+        <h2 id="scommeu_does">What does the Commission do?</h2>
+        <div>
+            <p style="font-size: larger;">The European Commission has Four Main Roles:</p>
+            <p>
+            <ol style="font-size: larger;">
+                <li>To Propose Legislation
+                    to Parliament and the Council
+                </li>
+                <li>To Manage and Implement
+                    EU Policies and the Budget
+                </li>
+                <li>To Enforce EU Law (jointly with the Court of Justice) </li>
+                <li>To Represent the European Union on the International Stage </li>
+            </ol>
+            </p>
+
+        </div>
+        <p></p>
+
+        <h3 id="scommeu_does_1">Proposing New Legislation</h3>
+        <div class="note-95">
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+            <p>The Commission has the
+                <span class="note-bold">Right of Initiative</span>.
+            </p>
+            <p>In other words, the Commission alone is responsible for drawing up proposals
+                for new EU legislation,
+                which it presents to Parliament and the Council. </p>
+            <p>These proposals must aim to defend the interests of the Union and its citizens,
+                not those of specific countries or industries. </p>
+            <p></p>
+
+        </div>
+        <p></p>
+
+        <div class="note-95">
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+            <p>Before making any proposals, the Commission must be aware of
+                new situations and problems developing in Europe,
+                and it must consider whether
+                EU legislation is the best way to deal with them. </p>
+            <p>That is why the Commission is in constant touch with a wide range of interest groups
+                and with two advisory bodies; </p>
+            <p>
+            <ul>
+                <li>the European Economic and Social Committee </li>
+                <li>the Committee of the Regions</li>
+            </ul>
+            </p>
+            <p></p>
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/comm-08.jpg" alt="Committee of the Regions">
+            </p>
+
+        </div>
+        <p></p>
+
+        <div class="note-95">
+            <p>It also takes the opinions of National Parliaments and
+                Governments into account. </p>
+            <p>The Commission will propose action at EU level only if
+                it considers that a problem cannot
+                be solved more efficiently by National, Regional or Local action.
+            </p>
+            <p>This approach of dealing
+                with issues at the lowest possible level is called
+                <span class="note-bold">the Subsidiarity Principle</span>.
+            </p>
+            <p></p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/comm-09.jpg" alt="The Commission">
+            </p>
+        </div>
+        <p></p>
+
+        <div class="note-95">
+            <p>If the Commission concludes that EU legislation is needed,
+                then it drafts a proposal that
+                it believes will deal with the problem effectively and
+                satisfy the widest possible range
+                of interests.
+            </p>
+            <p>To get the technical details right the Commission consults experts,
+                via various
+                advisory committees and consultative groups.
+            </p>
+            <p>Frequently, it publishes
+                <span class="note-bold"> Green and White Papers</span>,
+                holds hearings, seeks the views of civil society
+                and Commissions' specialist expert reports,
+                and often consults the public directly
+                before it makes a proposal in order to ensure that
+                it has as complete a picture as possible.
+            </p>
+            <p></p>
+            <span class="note-bold"> </span>
+            <span class="note-bold"> </span>
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/comm-10.jpg" alt="The Commission">
+            </p>
+
+        </div>
+        <p></p>
+
+        <h3 id="scommeu_does_2">Implementing EU Policies and the Budget</h3>
+
+        <span class="note-bold"> </span>
+
+
+        <div class="note-97">
+            <p>As the European Union’s executive body, the Commission
+                is responsible for managing and implementing
+                <span class="note-bold">the EU Budget</span>.
+            </p>
+            <p>Most of the actual spending is done by National and Local authorities,
+                but the Commission is responsible for supervising it —
+                under the watchful eye of
+                <span class="note-bold">the Court of Auditors</span>.
+            </p>
+            <p></p>
+            <p></p>
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/comm-11.jpg" alt="FP7">
+            </p>
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p>Both institutions aim to ensure good financial management.</p>
+            <p>Only if it is satisfied with the Court of Auditors' annual report,
+                does the European Parliament grant the Commission
+                discharge for implementing the Budget.</p>
+            <p></p>
+            <p></p>
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p>The Commission also has to implement decisions taken by
+                Parliament and the Council,
+                such as those relating to the;</p>
+            <p>
+            <ul>
+                <li>Common Agricultural Policy</li>
+                <li>Fisheries</li>
+                <li>Energy</li>
+                <li>Regional Development</li>
+                <li>Environment</li>
+                <li>Youth</li>
+                <li>Educational Training</li>
+                <li>Exchange Schemes, such as the Erasmus Program</li>
+                <li>...</li>
+            </ul>
+            </p>
+
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/comm-14.jpg" alt="The Commission">
+            </p>
+
+            <p></p>
+            <p></p>
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <span class="note-bold"> </span>
+            <p>It also plays a major role in
+                <span class="note-bold">Competition Policy</span>
+                in order to ensure that
+                Businesses operate on a level playing field.
+            </p>
+            <p>The Commission
+                <span class="note-bold">may prohibit mergers </span>
+                between companies if
+                it thinks they will lead to unfair competition.
+            </p>
+            <p>The Commission also has to make sure that EU countries do not distort competition
+                through excessive subsidies to their industries.</p>
+            <p></p>
+        </div>
+        <p></p>
+
+
+        <h3 id="scommeu_does_3">Enforcing European Law</h3>
+        <span class="note-bold"> </span>
+        <div class="note-117">
+            <p>The Commission acts as
+                <span class="note-bold">Guardian of the Treaties</span>.
+            </p>
+            <p>This means that the Commission, together with the Court of Justice,
+                is responsible for making sure
+                EU law is properly applied in all the Member States. </p>
+            <p></p>
+            <p></p>
+
+        </div>
+        <p></p>
+        <span class="note-bold"> </span>
+        <div class="note-117">
+            <p>If it finds that an EU Country is not applying an EU Law,
+                it launches a process called
+                <span class="note-bold">the Infringement Procedure</span>.
+            </p>
+            <p>The first step is to send the government an official letter,
+                saying why the Commission considers this country is infringing EU law and
+                setting it
+                <span class="note-bold">
+                    a Deadline for
+                    Sending a Detailed Explanation</span>.
+            </p>
+            <p></p>
+            <p></p>
+
+        </div>
+        <p></p>
+        <span class="note-bold"> </span>
+        <div class="note-117">
+
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/comm-12.jpg" alt="The Commission">
+            </p>
+
+
+            <p>If the Member State does not have a satisfactory explanation
+                or put matters right,
+                the Commission will send another letter
+                confirming that EU law has been infringed and setting
+                <span class="note-bold">a Deadline for it to be Corrected</span>.
+            </p>
+            <p>If the Member State still fails to comply,
+                the Commission will refer the matter to
+                <span class="note-bold">the Court of Justice </span>
+                to decide.
+            </p>
+            <p> <span class="note-bold">The Court's Judgements are Binding</span>
+                on
+                the Member States and the EU Institutions. </p>
+            <p>In cases where Member States continue failing to adhere to a judgment,
+                the Court can impose
+                <span class="note-bold">Financial Sanctions</span>.
+            </p>
+        </div>
+        <p></p>
+        <h3 id="scommeu_does_4">Representing the EU on the International Stage</h3>
+
+        <div class="note-95">
+            <p></p>
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/comm-15.jpg" alt="The Commission">
+            </p>
+            <p>The European Commission is an important spokesperson for
+                the European Union on the International Stage. </p>
+            <p>It is the voice of the EU in;</p>
+            <ul>
+                <li>International Forums such as the World Trade Organisation,</li>
+                <li>Negotiations on the International Climate Change Agreement,</li>
+                <li>The Kyoto Protocol,</li>
+                <li>The EU’s important Aid and Trade Partnership with developing countries
+                    in Africa, the Caribbean and the Pacific, known as the Cotonou Agreement.</li>
+            </ul>
+
+            <p></p>
+
+        </div>
+        <p></p>
+
+        <div class="note-95">
+            <p>The Commission also speaks and negotiates on behalf of the EU in areas where
+                the Member States have pooled sovereignty. </p>
+            <p>This is done on the basis of agreements reached in advance
+                with the Member States.</p>
+            <p></p>
+            <p></p>
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/comm-16.jpg" alt="The Commission">
+            </p>
+
+        </div>
+        <p></p>
+
+        <h2 id="scommeu_org">How is the Commission's work organised?</h2>
+
+        <div class="note-95">
+            <p>It is up to the Commission President to decide which
+                Commissioner will be responsible for which Policy Area,
+                and to reshuffle these responsibilities (if necessary)
+                during the Commission's term of office.</p>
+            <p>The Commission generally meets once a week, usually on Wednesdays,
+                and usually in Brussels.
+                Each item on the agenda is presented by
+                the Commissioner Responsible for that policy area,
+                and the whole team then takes a
+                Collective Decision on it.</p>
+            <p></p>
+
+        </div>
+        <p></p>
+
+        <div class="note-97">
+            <p>The Commission’s staff is organised in Departments,
+                known as
+                <span class="note-bold">Directorates-General (DGs)</span>
+                and <span class="note-bold">Services (such as the Legal Service)</span>.
+            </p>
+
+            <p>
+                <img style="max-width: 100%; height: auto;" src="../images/eu/comm-17.jpg" alt="The Commission">
+            </p>
+            <p>Each DG is responsible for a particular Policy Area and
+                is headed by a Director-General who is answerable
+                to one of the Commissioners. </p>
+            <p>Overall coordination is provided by the Secretariat-General,
+                which also manages the weekly Commission meetings.
+                It is headed by the Secretary General, who is
+                answerable directly to the President.</p>
+        </div>
+        <p></p>
+
+        <div class="note-117">
+            <p>It is the DGs that actually devise and draft Legislative Proposals,
+                but these proposals become official only when
+                'adopted' by the Commission at its weekly meeting. </p>
+            <p>The Procedure is roughly as follows:</p>
+            <ul>
+                <li>Suppose, for example, that the Commission sees a need
+                    for EU Legislation to prevent pollution of Europe's rivers. </li>
+                <li>The Directorate-General for the Environment will draw up a proposal,
+                    based on extensive consultations with European Industry,
+                    Farming and Environmental Organisations,
+                    and Environment Ministries in the EU countries. </li>
+                <li>The draft will also be discussed with other Commission Departments
+                    with an interest in this topic, and checked by the Legal Service and the
+                    Secretariat-General.
+                </li>
+                <li>Once the proposal is fully ready,
+                    it will be put on the agenda of a Commission Meeting</li>
+                <li>If at least 14 of the 27 Commissioners approve the proposal,
+                    the Commission will adopt it
+                    and it will have the Whole Team's Unconditional Support. </li>
+                <li>The document will then be sent to the
+                    Council and the European Parliament for them to decide
+                    on the Proposal. </li>
+                <li>The Commission may subsequently make amendments in the light of the comments from
+                    these Two Institutions and then
+                    send the Proposal back for Final Approval.</li>
+            </ul>
+            <p></p>
+            <p></p>
+
+            <p> <img style="max-width: 100%; height: auto;" src="../images/eu/comm-18.jpg" alt="The European Commission">
+            </p>
+        </div>
+        <p></p>
+
+        <p style="font-size: larger;">This sums up our Business Narrative. </p>
+
+        <h1 id="sreferences">References</h1>
+
+        <div class="note-117">
+            <ul>
+                <li>ISBN 92-79-03653-X , How the European Union works: Booklet by EU Publications Office
+                </li>
+                <li>ISBN 978-92-824-2203-8, Information handbook of the Council of the European Union, DG
+                    Press, General
+                    Secretariat of the Council</li>
+
+                <li>European Union
+                    <p><a href="https://europa.eu/european-union/index_en" target="_blank">
+                            https://europa.eu/european-union/index_en</a> </p>
+
+                </li>
+
+                <li>The Council of the European Union
+                    <p><a href="https://www.consilium.europa.eu/en/" target="_blank">
+                            https://www.consilium.europa.eu/en/</a>
+                    </p>
+                </li>
+                <li>European Parliament
+                    <p> <a href="https://www.europarl.europa.eu/portal/en" target="_blank">
+                            https://www.europarl.europa.eu/portal/en</a> </p>
+
+                </li>
+                <li>The Official Directory of the European Union (Who is Who)
+                    <p><a href="  https://op.europa.eu/en/web/who-is-who" target="_blank">
+                            https://op.europa.eu/en/web/who-is-who </a> </p>
+                </li>
+            </ul>
+        </div>
+        <p></p>
+        <p></p>
+</body>
+
+</html>

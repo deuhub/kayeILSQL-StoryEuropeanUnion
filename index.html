@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kaye is Learning SQL</title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Kaye is Learning SQL">
+    <meta name="keywords" content="Kaye is Learning SQL, #kayeIsLearningSQL, 
+    SQL, #sql, Learn SQL, #learnsql
+ ">
+    <meta name="author" content="Dicle Ertan Ülger">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        h1 {
+            color: rgb(8, 51, 143);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            page-break-before: always;
+        }
+
+        h2 {
+            color: rgb(125, 186, 0);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            page-break-before: always;
+        }
+
+        h3 {
+            color: rgb(0, 184, 224);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        h4 {
+            color: rgb(222, 59, 33);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: large;
+        }
+
+
+        h5 {
+            color: rgb(0, 196, 181);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: large;
+        }
+
+        h6 {
+            color: rgb(144, 36, 143);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: large;
+        }
+
+        p {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .note-emoji-300 {
+            font-size: 300%;
+
+        }
+
+
+        .note-bold {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+
+
+        .note-bold-italic {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .note-bold-navy {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            color: rgb(8, 51, 143);
+        }
+
+        .note-bold-navy-italic {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            color: rgb(8, 51, 143);
+            font-style: italic;
+        }
+
+        .note-bold-navy-larger {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            color: rgb(8, 51, 143);
+            font-size: larger;
+        }
+
+        .note-bold-larger {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        .note-bold-red {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(222, 59, 33);
+            font-weight: bold;
+        }
+
+        .note-bold-red-larger {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(222, 59, 33);
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        .note-bold-red-italic {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(222, 59, 33);
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .note-10 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(222, 59, 33);
+            background-color: rgb(247, 181, 18);
+            padding: 30px;
+            font-weight: bold;
+        }
+
+        .note-20 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(222, 59, 33);
+            font-weight: bold;
+        }
+
+        .note-25 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(222, 59, 33);
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .note-white-larger {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(256, 256, 256);
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        .note-30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(247, 181, 18);
+            padding: 30px;
+            font-weight: bold;
+        }
+
+        .note-40 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(0, 184, 224);
+            padding: 30px;
+            font-weight: bold;
+        }
+
+        .note-50 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 25%);
+            padding: 30px;
+            font-weight: bold;
+        }
+
+        .note-55 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 25%);
+            padding: 30px;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        .note-60 {
+            background-color: rgb(247, 181, 18);
+            color: rgb(8, 51, 143);
+            font-size: larger;
+            font-weight: bold;
+            padding: 30px;
+        }
+
+        .note-70 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 25%);
+            padding: 20px;
+        }
+
+        .note-75 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 25%);
+            color: rgb(222, 59, 33);
+            padding: 30px;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        .note-80 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(247, 181, 18);
+            color: rgb(222, 59, 33);
+            padding: 30px;
+            font-weight: bold;
+        }
+
+
+        .note-85 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(247, 181, 18);
+            color: rgb(222, 59, 33);
+            padding: 30px;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        .note-jci-green {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(125, 186, 0);
+            padding: 30px;
+        }
+
+        .note-jci-green-3 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: larger;
+            font-weight: bold;
+            background-color: rgb(125, 186, 0);
+            padding: 30px;
+        }
+
+
+        .note-90 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(125, 186, 0, 25%);
+            padding: 30px;
+
+        }
+
+        .note-cyan-a30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 30%);
+            padding: 30px;
+        }
+
+        .note-95 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 10%);
+            padding: 30px;
+        }
+
+        .note-95-a15 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 15%);
+            padding: 30px;
+        }
+
+        .note-95-a20 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 20%);
+            padding: 30px;
+        }
+
+        .note-95-a30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 30%);
+            padding: 30px;
+        }
+
+        .note-95-a30-larger {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 30%);
+            padding: 30px;
+            font-size: larger;
+        }
+
+        .note-jci-cyan {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(0, 184, 224);
+            padding: 30px;
+        }
+
+        .note-jci-cyan-10 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 10%);
+            padding: 30px;
+        }
+
+        .note-jci-cyan-larger {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(0, 184, 224);
+            padding: 30px;
+            font-size: larger;
+        }
+
+        .note-96 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 184, 224, 10%);
+            padding: 30px;
+            font-size: larger;
+        }
+
+        .note-97 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(125, 186, 0, 10%);
+            padding: 30px;
+
+        }
+
+        .note-97-a15 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(125, 186, 0, 15%);
+            padding: 30px;
+
+        }
+
+        .note-97-a30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(125, 186, 0, 30%);
+            padding: 30px;
+        }
+
+        .note-98 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(125, 186, 0, 10%);
+            padding: 30px;
+            font-size: larger;
+
+        }
+
+        .note-jcigreen-larger {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(125, 186, 0);
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        .note-110 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(199, 15, 175);
+            font-weight: bold;
+        }
+
+        .note-115 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(199, 15, 175, 25%);
+            padding: 30px;
+            font-weight: bold;
+        }
+
+        .note-117 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(199, 15, 175, 10%);
+            padding: 30px;
+        }
+
+        .note-117-a05 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(199, 15, 175, 5%);
+            padding: 30px;
+        }
+
+
+        .note-117-a10 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(199, 15, 175, 10%);
+            padding: 30px;
+        }
+
+        .note-117-a15 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(199, 15, 175, 15%);
+            padding: 30px;
+        }
+
+        .note-117-a30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(199, 15, 175, 30%);
+            padding: 30px;
+        }
+
+        .note-117-a50 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(199, 15, 175, 50%);
+            padding: 30px;
+        }
+
+        .note-117-a70 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(199, 15, 175, 70%);
+            padding: 30px;
+        }
+
+        .note-117-larger {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(199, 15, 175);
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        .note-200 {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .note-210 {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+
+
+
+        .note-300 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(102, 99, 102);
+            color: rgb(245, 245, 245);
+            padding: 30px;
+            font-weight: bold;
+        }
+
+
+        .note-charcoal-larger {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(102, 99, 102);
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        .note-charcoal {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(102, 99, 102);
+            padding: 30px;
+        }
+
+        .note-charcoal-a70 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(102, 99, 102, 70%);
+            padding: 30px;
+        }
+
+        .note-charcoal-a50 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(102, 99, 102, 50%);
+            padding: 30px;
+        }
+
+        .note-charcoal-a30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(102, 99, 102, 30%);
+            padding: 30px;
+        }
+
+        .note-charcoal-a30-large {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(102, 99, 102, 30%);
+            padding: 30px;
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        .note-charcoal-a30-largexx {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(102, 99, 102, 30%);
+            padding: 30px;
+            font-size: xx-large;
+            font-weight: bold;
+        }
+
+        .note-solaryellow-a30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(247, 181, 18, 30%);
+            padding: 30px;
+        }
+
+        .note-brightgreen-larger {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(196, 219, 13);
+            font-size: larger;
+            font-weight: bold;
+            padding: 30px;
+        }
+
+        .note-brightgreen {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(196, 219, 13);
+            padding: 30px;
+        }
+
+        .note-brightgreen-a70 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(196, 219, 13, 70%);
+            padding: 30px;
+        }
+
+        .note-brightgreen-a50 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(196, 219, 13, 50%);
+            padding: 30px;
+        }
+
+        .note-brightgreen-a30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(196, 219, 13, 30%);
+            padding: 30px;
+        }
+
+        .note-brightgreen-a10 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(196, 219, 13, 10%);
+            padding: 30px;
+        }
+
+        .note-brightgreen-a05 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(196, 219, 13, 5%);
+            padding: 30px;
+        }
+
+        .note-oceangreen-larger {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 196, 181);
+            font-size: larger;
+            font-weight: bold;
+            padding: 30px;
+        }
+
+        .note-oceangreen {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 196, 181);
+            padding: 30px;
+        }
+
+        .note-oceangreen-a05 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 196, 181, 5%);
+            padding: 30px;
+        }
+
+        .note-oceangreen-a10 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 196, 181, 10%);
+            padding: 30px;
+        }
+
+        .note-oceangreen-a30 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 196, 181, 30%);
+            padding: 30px;
+        }
+
+        .note-oceangreen-a50 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 196, 181, 50%);
+            padding: 30px;
+        }
+
+        .note-oceangreen-a70 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 196, 181, 70%);
+            padding: 30px;
+        }
+
+
+        .note-radient-red-larger {
+            background-color: rgb(168, 3, 79);
+            color: rgb(245, 245, 245);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: larger;
+            font-weight: bold;
+            padding: 30px;
+        }
+
+        .note-radient-red {
+            background-color: rgb(168, 3, 79);
+            color: rgb(245, 245, 245);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 30px;
+        }
+
+        .note-radient-red-a70 {
+            background-color: rgba(168, 3, 79, 70%);
+            color: rgb(245, 245, 245);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 30px;
+        }
+
+        .note-radient-red-a50 {
+            background-color: rgba(168, 3, 79, 50%);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 30px;
+        }
+
+        .note-radient-red-a30 {
+            background-color: rgba(168, 3, 79, 30%);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 30px;
+        }
+
+        .note-radient-red-a10 {
+            background-color: rgba(168, 3, 79, 10%);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 30px;
+        }
+
+        .note-radient-red-a05 {
+            background-color: rgba(168, 3, 79, 5%);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 30px;
+        }
+
+        .note-310 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(102, 99, 102);
+            color: rgb(245, 245, 245);
+            padding: 30px;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        ul {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            line-height: 30px;
+        }
+
+        ol {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            line-height: 30px;
+        }
+
+        dl {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            line-height: 30px;
+        }
+
+        dt {
+            font-size: larger;
+        }
+
+        #t20 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+        }
+
+        table {
+            width: 100%;
+            text-align: left;
+            font-size: small;
+        }
+
+        table,
+        th,
+        td {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+
+        div {
+            overflow-x: auto;
+
+        }
+
+        figcaption {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        p.lh2 {
+            line-height: 2;
+        }
+
+        ul.lh3 {
+            line-height: 3;
+        }
+
+
+        #table_and table,
+        th,
+        td {
+            padding: 30px;
+            text-align: center;
+            border-collapse: collapse;
+            font-size: larger;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="note-97">
+    <p>Hello! and welcome to the
+        <b>Kaye is Learning SQL Website</b>!
+    </p>
+    <p><img src="./images/ix/front_02.jpg" style="max-width:100% ;" height="auto"  alt="welcome!"> </p>
+</div>
+<p></p>
+<p>Below are the contents of this website.</p>
+<div class="note-95">
+
+    <p><a href="./public/kayeILSQL-00-Introduction.htm" target="_blank">
+        KayeILSQL-00-Introduction </a>
+    </p>
+    <p><a href="./public/kayeILSQL-01-RelationalApproach.htm" target="_blank">
+        KayeILSQL-01-Database Concepts: A Relational Approach </a>
+    </p>
+    
+    <p><a href="./public/kayeILSQL-02-DataModelingNormalization.htm" target="_blank">
+        KayeILSQL-02-Data Modeling and Normalization
+    </a></p>
+    <p><a href="./public/kayeILSQL-03-Oracle Tables.htm" target="_blank">
+        KayeILSQL-03-Oracle Tables
+    </a></p>
+    <p><a href="./public/kayeILSQL-04-Oracle Constraints.htm" target="_blank">
+        KayeILSQL-04-Oracle Integrity Constraints    
+    </a></p>
+    <p><a href="./public/KayeILSQL-05-OracleQueries.htm" target="_blank">
+        KayeILSQL-05-Oracle Queries
+    </a></p>
+    <p><a href="./public/KayeILSQL-06-MultiTableJoins.htm" target="_blank">
+        KayeILSQL-06-Multi-Table Joins
+    </a></p>
+    <p><a href="./public/KayeILSQL-07-AggregateFunctions.htm" target="_blank">
+        KayeILSQL-07-Aggregate Functions
+    </a></p>
+    <p><a href="./public/KayeILSQL-08-Subqueries.htm" target="_blank">
+        KayeILSQL-08-Subqueries
+    </a></p>
+    <p><a href="./public/kayeILSQL-StoryEuropeanUnion.htm" target="_blank">
+        The Story of the European Union
+    </a></p>    
+
+</div>
+
+<p></p>
+
+<p>I would like to have the
+<b>Introduction Section</b> here, down below.</p>
+<p>You can also find it within the
+    <a href="#contents_02">Contents</a>. </p>
+
+<!--  -->
+
+<p style="color: rgb(8, 51, 143);
+font-weight: bold; font-size: larger;">My Dear Kaye is Learning SQL</p>
+
+    <p>I am here and now, starting to write this new piece of work called <span class="note-110">"Kaye is Learning
+        SQL"</span>.
+    <br> The date today is the 16th of July 2021.
+    <br>Dicle Ertan Ülger
+    <br>
+    <a href="mailto:dicle.ulger@gmail.com">dicle.ulger@gmail.com</a>
+    <br> <br>
+    <img src="./images/ix/pineTree.png" style="width:auto">
+    <img src="./images/ix/pineTree.png" style="width:auto">
+    <img src="./images/ix/pineTree.png" style="width:auto">
+</p>
+
+<p><a href="#bo-10">Based On</a> </p>
+<p><a href="#th-10">Thanks</a></p>
+<p><a href="#kaye-10">Why Kaye? </a> </p>
+<ul>
+    <li><a href="#kaye-10-1">Meaning of the Name Kaye</a> </li>
+    <li><a href="#kaye-10-2">For me, Kaye symbolizes</a> </li>
+    <li><a href="#kaye-10-3">A Profession Based on a Knowledge of SQL </a> </li>
+    <li><a href="#kaye-10-4">I dedicate this work to Kaye </a> </li>
+</ul>
+<p><a href="#quotes-10">Some Quotes of Encouragement for My Dear Kaye </a> </p>
+
+<h2 id="bo-10">Based On</h2>
+
+<div class="note-charcoal-a30-large">
+
+
+<p>The contents of this work are based on;
+</p>
+</div>
+<p>
+
+</p>
+
+<ul class="note-95">
+    <li>the SQL Courses I delivered to Oracle Customers in 
+        Oracle Turkey, during 1995-2002,
+    </li>
+    <li>the SQL Courses I delivered to the students of
+        the evening programs 
+         in Bahçeşehir University, 
+        Istanbul, during 2007-2009,</li>
+    <li>the in-house SQL Courses I delivered to my colleagues 
+        in Johnson Controls, Istanbul Technology Center,
+        during 2009-2012,</li>
+    <li>the in-house SQL Courses I delivered to my colleagues 
+        in Toyzz Shop HQ, Şekerpınar Kocaeli, during 2014-2021,
+    </li>
+    <li>most of my career in IT where I used hands-on SQL as 
+        a base of the development tools starting from 1987 &mdash;
+       30 years of lapse time approximately.</li>
+</ul>
+
+
+<h2 id="th-10">Thanks</h2>
+<div class="note-97">
+
+    <figure>
+
+        <img src="./images/ix/crapeMyrtle-22.jpg" style="max-width: 100%; height: auto;" alt="Beautiful Crape Myrtle Tree">
+        <figcaption style="font-weight: bold;">
+            I would like to thank dearly;
+        </figcaption>
+    </figure>
+
+    <p>
+    </p>
+
+
+<ul>
+    <li>to my team &mdash; my extended family then, in Oracle Education Turkey;
+(in alphabetical order) 
+Aykut Çelik,
+Cem Ayberkin, Cem Zorba,
+Çiğdem Baydar,
+Deniz Tekin,
+Gökben Utkun,
+Hüseyin Yeni,
+Leyla Alpaslan,
+Melek Can,
+Özgür Kuş,
+Pelin Ersavaş,
+Sedat Zencirci, Serdal Metin, Serdar Aygül, Sevilay Sülünoğlu, Soley Çelik, Suat Özdemir,
+Yalçın Zorman.
+Thank you all very much. 
+I learned so much from each and every one of you.
+    </li>
+    <li>to my friend since my undergraduate years, 
+        Dear Professor Dr. Irini Dimitriyadis,
+        my Rinoula,
+        who kindly introduced me
+        to Bahçeşehir University, and thus initiated my 
+        SQL and PL/SQL courses there. 
+        Thank you very much for your friendship and for your professional support, Irini.
+    </li>
+    <li>to my students in Bahçeşehir University, most of whom were working during the day,
+        and attending my on-site courses in the evenings &mdash; 
+        Thank you all for your efforts on your tired evenings, when most people were at rest or at sleep. 
+    </li>
+    <li>to my colleagues in Johnson Controls, Istanbul Technology Center, and in Toyzz Shop HQ, Şekerpınar Kocaeli,
+        who attended my in-house courses for many years.
+        Thank you all for your attendance despite your busy schedules.
+    </li>
+</ul>
+</div>
+<p></p>
+<div class="note-117">
+
+<p>All that work and effort, and experience gave me the courage and the will to gather them together
+    under one single roof.</p>
+</div>
+<p></p>
+
+<h2 id="kaye-10">Why Kaye?</h2>
+
+<h3 id="kaye-10-1">Meaning of the Name Kaye</h3>
+<div class="note-95">
+    <p> Meaning of the "name Kaye" &#151; from many sources in Google, 
+        though not limited with what is below: </p>
+    <ul>
+        <li>Keeper of the Keys 
+            (Keys to Knowledge and Profession in our context) </li>
+        <li>To Express Great Happiness about something</li>
+        <li>To Feel Joy or Great Delight</li>
+        <li>To Rejoice in Another's Happiness</li>
+        <li>Happiness, Delight, Joy, Triumph</li>
+    </ul>
+</div>
+
+
+<p> </p>
+<h3 id="kaye-10-2">For me, Kaye symbolizes</h3>
+<div class="note-97">
+    <p>Kaye for me, symbolizes;
+        <br>
+        <br>All the girls, females, mothers, mothers of girls and boys, female partner and/or a wife,
+        sister of girls and boys, daughter of a mother and a father,
+        <br>Who has a profession,
+        <br>Who can make an earnest living,
+        <br>Who can provide for and support their family members young and old,
+        <br>Who feel joy and great happiness to be able to do these,
+        <br>
+        And ... who can have their own freedom, who can pursue their own goals and dreams at the same time,
+        <br>Who feel happy, light-hearted and triumphant 
+        to be free and to have achieved their own goals and
+        their own dreams.
+    </p>
+
+
+</div>
+<p></p>
+
+
+<div class="note-97">
+<p>
+    Of course, Kaye can have any profession she likes,
+     to be able to do these.
+</p>
+
+<p>
+    But as I can only teach and pass on what I know and what I continue to learn and do,
+    My Dear Kaye can <b>base </b> her profession on a <b>knowledge of SQL</b>.
+</p>
+</div>
+<p></p>
+
+<h3 id="kaye-10-3">A Profession Based on a Knowledge of SQL 
+    </h3>
+
+<div class="note-117">
+
+    <p>
+        Kaye does not have to be a graduate of a university
+        at all, of course it would be a pleasant experience to attend university, and we all know that there are no
+        age limits any more to attend
+        and graduate from universities.
+    </p>
+    <p>Kaye can attend professional online courses and/or classroom courses to learn the skills needed to get her a
+        modern technological profession.
+    </p>
+    <p>
+        She can get professional certificates which enable her to get a job and apply her skills,
+        which are more realistic and relevant evidences of knowledge and skills than a university degree.
+    </p>
+</div>
+
+<p></p>
+
+<div class="note-117"> 
+
+<p> There are so many professions that are based on a good knowledge of SQL.
+</p>
+
+<ul>
+    <li>Kaye can become an ETL Developer.</li>
+    <li>Kaye can become a Reports Developer.</li>
+    <li>Kaye can become a Data Scientist.</li>
+    <li>Kaye can become a Data Engineer.</li>
+    <li>... any new profession using SQL </li>
+</ul>
+</div>
+<p> </p>
+<div class="note-117"> 
+<p> </p>
+<p>These professions need more than SQL, but I know from personal experience that 
+knowledge of SQL
+    will make Kaye become "the Keeper of the Keys", 
+    and it will open many new doors to new possibilities, 
+    many new doors to new jobs for her.
+</p>
+</div>
+<p> </p>
+
+<h3 id="kaye-10-4">I dedicate this work to Kaye 
+</h3>
+<div class="note-96">
+
+    <p>
+        Therefore, here is to all the Kayes;
+        <br>
+        <br> Who want to have a profession,
+        <br> Who want to pursue their dreams,
+        <br> And who want to be financially independent,
+        <br> Who want to support their family members young and old,
+        <br> Who want to live decent lives;
+        <br>
+        <br>I dedicate this work to you, for you to become the "Keeper of the Keys";
+        <br>Keys to Knowledge 
+        <br>Keys to a New Profession
+        <br>Keys to a New Job 
+        <br>Keys to Financial Freedom 
+        <br>Keys to your own Goals and to your own Dreams.
+        <br>
+        <br>I wish you courage, patience and the will to work hard.
+    </p>
+
+    <img style="max-width: 100%; height: auto;" src="./images/ix/lavender_01.jpg" alt="Success / Başarı">
+    
+</div>
+<p> </p>
+
+<p style="page-break-before: always;">&nbsp; </p>
+<h2 id="quotes-10">Some Quotes of Encouragement for My Dear Kaye</h2>
+
+<div class="note-310">
+    <p>
+        "It does not matter how slowly you go, as long as you do not stop."
+        <br> - Confucius.
+    </p>
+</div>
+
+<p> </p>
+<div class="note-310">
+    <p>
+        "You’re never beaten until you admit it."
+        <br>
+        - General George Smith Patton, Jr.
+    </p>
+</div>
+
+<p> </p>
+
+<div class="note-310">
+    <p>
+        "The big secret in life is that, there is no big secret.
+        <br>
+        Whatever your goal, you can get there if you are willing
+        to work."
+        <br>
+        - Oprah Winfrey.
+    </p>
+</div>
+<p> </p>
+
+
+
+<p> </p>
+<div class="note-310">
+    <p>
+        "A lot of walking away will do your life good;</p>
+
+        <ul>
+            <li>Walk away from arguments that lead you to anger and nowhere.</li>
+            <li>Walk away from people who deliberately put you down.</li>
+            <li>Walk away from the practice of pleasing people who choose to never see
+                your worth.</li>
+            <li>Walk away from any thought that undermines your peace of mind.</li>
+            <li>Walk away from judgemental people,
+                they do not know the struggle you are facing and
+                what you have been through.</li>
+            <li style="font-size: larger;">
+                Walk away from your mistakes and fears, 
+                they do not determine your fate.</li>
+        
+        </ul>
+        <p>  The more you walk away from things that poison your soul,
+            the healthier your life will be."</p>
+     
+            <p>    - Dodinsky.
+    </p>
+</div>
+
+<p> </p>
+
+
+<div class="note-97">
+
+<img src="./images/ix/garden-9983.jpg" style="max-width:100% ;" height="auto" 
+alt="Breath of Fresh Air">
+
+<p> </p>
+
+</div>
+<p></p>
+
+<div class="note-96">
+<p>"Başarılı olduğunuzu simgeleyen bir resmi zihninize iyice kazıyın.</p>
+<p>Bu resmi zihninizden hiç çıkartmayın.</p>
+<p>Solup rengini kaybetmesine izin vermeyin.</p>
+<p>Zihniniz bu resmi geliştirmeye çalışır.</p>
+<p>Başarısız olmayı asla düşünmeyin. 
+<br> Her zaman, Başarılı olmuş olduğunuzu düşünün. </p>
+<p>Kafanıza kazıdığınız resmin gerçekliğinden hiç bir zaman şüphe etmeyin.
+<br>Her zaman, Kafanıza kazıdığınız resmin gerçekliğinden emin olun.
+</p>
+<p>Zihin, kendisine kazınmış olan resim neyse onun üzerinde çalışır ve derinliklerine iner.</p>
+<p>Onun için, zihninizdeki resim başarınızı simgeleyen bir resim olmalıdır.</p>
+<p>Böylece zihniniz hep bu resim üzerinde çalışacak, hep sizin başarınızı ön plana çıkaracaktır.  </p>
+<p>Ne kadar karamsar olaylar olursa olsun, bu olaylar sizi etkilemeyecektir."</p>
+<p></p>
+<p></p>
+<p style="font-style: italic; 
+font-weight: bold;
+color: rgb(8, 51, 143);">
+Book Name: The Power of Positive Thinking <br>
+Author: Norman Vincent Peale <br>
+ISBN: 975-322-013-8 <br>
+Turkish Translation by: Şahin Cüceloğlu <br>
+Book Name in Turkish: Olumlu Düşünmenin Gücü <br>
+
+</p>
+
+</div>
+
+<p></p>
+
+
+
+
+<!--  -->
+
+
+<!--  -->
+
+<div class="note-97">
+
+    <img src="./images/ix/garden-9984.jpg" style="max-width:100% ;" height="auto" alt="Breath of Fresh Air">
+
+
+    <p> </p>
+
+</div>
+<div class="note-310">
+    <p> "It is impossible" said Pride.</p>
+    <p>"It is Risky" sais Experience. </p>
+    <p>"It is Pointless" said Reason. </p>
+    <p>"Give it a Try" whispered the Heart. </p>
+</div>
+<p> </p>
+<p></p>
+
+<!--  -->
+<p>And here are the contents once again, down below.</p>
+<h2 id="contents_02">Contents</h2>
+<div class="note-95">
+
+<p><a href="./public/kayeILSQL-00-Introduction.htm" target="_blank">
+    KayeILSQL-00-Introduction </a>
+</p>
+<p><a href="./public/kayeILSQL-01-RelationalApproach.htm" target="_blank">
+    KayeILSQL-01-Database Concepts: A Relational Approach </a>
+</p>
+
+<p><a href="./public/kayeILSQL-02-DataModelingNormalization.htm" target="_blank">
+    KayeILSQL-02-Data Modeling and Normalization
+</a></p>
+<p><a href="./public/kayeILSQL-03-Oracle Tables.htm" target="_blank">
+    KayeILSQL-03-Oracle Tables
+</a></p>
+<p><a href="./public/kayeILSQL-04-Oracle Constraints.htm" target="_blank">
+    KayeILSQL-04-Oracle Integrity Constraints    
+</a></p>
+<p><a href="./public/KayeILSQL-05-OracleQueries.htm" target="_blank">
+    KayeILSQL-05-Oracle Queries
+</a></p>
+<p><a href="./public/KayeILSQL-06-MultiTableJoins.htm" target="_blank">
+    KayeILSQL-06-Multi-Table Joins
+</a></p>
+<p><a href="./public/KayeILSQL-07-AggregateFunctions.htm" target="_blank">
+    KayeILSQL-07-Aggregate Functions
+</a></p>
+<p><a href="./public/KayeILSQL-08-Subqueries.htm" target="_blank">
+    KayeILSQL-08-Subqueries
+</a></p>
+<p><a href="./public/kayeILSQL-StoryEuropeanUnion.htm" target="_blank">
+    The Story of the European Union
+</a></p>
+
+</div>
+
+</body>
+
+</html>
